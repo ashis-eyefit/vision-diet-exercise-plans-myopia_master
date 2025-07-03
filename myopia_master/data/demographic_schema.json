@@ -1,0 +1,10 @@
+{
+  "age_groups": {
+    "preschool (4-6)": { "label": "Preschool", "range": [4, 6] },
+    "early_primary (7-9)": { "label": "Early Primary", "range": [7, 9] },
+    "preteen (10-12)": { "label": "Preteen", "range": [10, 12] },
+    "teen (13-15)": { "label": "Teen", "range": [13, 15] },
+    "late_teen (16-18)": { "label": "Late Teen", "range": [16, 18] }
+  },
+  "ethnicities": ["asian", "caucasian", "african", "hispanic", "other"]
+}

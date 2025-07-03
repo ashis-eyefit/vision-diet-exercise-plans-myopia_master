@@ -1,0 +1,679 @@
+{
+  "axial_length_left": {
+  "preschool (4-6)": {
+    "male": {
+      "asian": { "low": 21.8, "moderate": 22.5, "high": 23.2 },
+      "caucasian": { "low": 22.0, "moderate": 22.8, "high": 23.5 },
+      "african": { "low": 22.2, "moderate": 23.0, "high": 23.6 },
+      "hispanic": { "low": 22.1, "moderate": 22.9, "high": 23.4 },
+      "other": { "low": 22.0, "moderate": 22.7, "high": 23.3 }
+    },
+    "female": {
+      "asian": { "low": 21.6, "moderate": 22.3, "high": 23.0 },
+      "caucasian": { "low": 21.8, "moderate": 22.5, "high": 23.2 },
+      "african": { "low": 21.9, "moderate": 22.6, "high": 23.3 },
+      "hispanic": { "low": 21.8, "moderate": 22.4, "high": 23.1 },
+      "other": { "low": 21.7, "moderate": 22.3, "high": 23.0 }
+    }
+  },
+
+  "early_primary (7-9)": {
+    "male": {
+      "asian": { "low": 22.3, "moderate": 23.0, "high": 23.7 },
+      "caucasian": { "low": 22.5, "moderate": 23.2, "high": 23.9 },
+      "african": { "low": 22.6, "moderate": 23.3, "high": 24.0 },
+      "hispanic": { "low": 22.5, "moderate": 23.1, "high": 23.8 },
+      "other": { "low": 22.4, "moderate": 23.0, "high": 23.7 }
+    },
+    "female": {
+      "asian": { "low": 22.1, "moderate": 22.8, "high": 23.5 },
+      "caucasian": { "low": 22.3, "moderate": 23.0, "high": 23.7 },
+      "african": { "low": 22.4, "moderate": 23.1, "high": 23.8 },
+      "hispanic": { "low": 22.3, "moderate": 22.9, "high": 23.6 },
+      "other": { "low": 22.2, "moderate": 22.8, "high": 23.5 }
+    }
+  },
+
+  "preteen (10-12)": {
+    "male": {
+      "asian": { "low": 22.7, "moderate": 23.4, "high": 24.2 },
+      "caucasian": { "low": 22.9, "moderate": 23.6, "high": 24.3 },
+      "african": { "low": 23.0, "moderate": 23.7, "high": 24.4 },
+      "hispanic": { "low": 22.8, "moderate": 23.5, "high": 24.2 },
+      "other": { "low": 22.7, "moderate": 23.4, "high": 24.1 }
+    },
+    "female": {
+      "asian": { "low": 22.5, "moderate": 23.2, "high": 24.0 },
+      "caucasian": { "low": 22.7, "moderate": 23.4, "high": 24.1 },
+      "african": { "low": 22.8, "moderate": 23.5, "high": 24.2 },
+      "hispanic": { "low": 22.6, "moderate": 23.3, "high": 24.0 },
+      "other": { "low": 22.5, "moderate": 23.2, "high": 23.9 }
+    }
+  },
+
+  "teen (13-15)": {
+    "male": {
+      "asian": { "low": 23.0, "moderate": 23.8, "high": 24.5 },
+      "caucasian": { "low": 23.2, "moderate": 23.9, "high": 24.6 },
+      "african": { "low": 23.3, "moderate": 24.0, "high": 24.7 },
+      "hispanic": { "low": 23.1, "moderate": 23.8, "high": 24.5 },
+      "other": { "low": 23.0, "moderate": 23.7, "high": 24.4 }
+    },
+    "female": {
+      "asian": { "low": 22.8, "moderate": 23.6, "high": 24.3 },
+      "caucasian": { "low": 23.0, "moderate": 23.7, "high": 24.4 },
+      "african": { "low": 23.1, "moderate": 23.8, "high": 24.5 },
+      "hispanic": { "low": 22.9, "moderate": 23.6, "high": 24.3 },
+      "other": { "low": 22.8, "moderate": 23.5, "high": 24.2 }
+    }
+  },
+
+  "late_teen (16-18)": {
+    "male": {
+      "asian": { "low": 23.3, "moderate": 24.0, "high": 24.8 },
+      "caucasian": { "low": 23.4, "moderate": 24.1, "high": 24.9 },
+      "african": { "low": 23.5, "moderate": 24.2, "high": 25.0 },
+      "hispanic": { "low": 23.3, "moderate": 24.0, "high": 24.8 },
+      "other": { "low": 23.2, "moderate": 23.9, "high": 24.7 }
+    },
+    "female": {
+      "asian": { "low": 23.0, "moderate": 23.7, "high": 24.5 },
+      "caucasian": { "low": 23.1, "moderate": 23.8, "high": 24.6 },
+      "african": { "low": 23.2, "moderate": 23.9, "high": 24.7 },
+      "hispanic": { "low": 23.0, "moderate": 23.7, "high": 24.5 },
+      "other": { "low": 22.9, "moderate": 23.6, "high": 24.4 }
+    }
+  }
+},
+"axial_length_right": {
+  "preschool (4-6)": {
+    "male": {
+      "asian": { "low": 21.8, "moderate": 22.5, "high": 23.2 },
+      "caucasian": { "low": 22.0, "moderate": 22.8, "high": 23.5 },
+      "african": { "low": 22.2, "moderate": 23.0, "high": 23.6 },
+      "hispanic": { "low": 22.1, "moderate": 22.9, "high": 23.4 },
+      "other": { "low": 22.0, "moderate": 22.7, "high": 23.3 }
+    },
+    "female": {
+      "asian": { "low": 21.6, "moderate": 22.3, "high": 23.0 },
+      "caucasian": { "low": 21.8, "moderate": 22.5, "high": 23.2 },
+      "african": { "low": 21.9, "moderate": 22.6, "high": 23.3 },
+      "hispanic": { "low": 21.8, "moderate": 22.4, "high": 23.1 },
+      "other": { "low": 21.7, "moderate": 22.3, "high": 23.0 }
+    }
+  },
+
+  "early_primary (7-9)": {
+    "male": {
+      "asian": { "low": 22.3, "moderate": 23.0, "high": 23.7 },
+      "caucasian": { "low": 22.5, "moderate": 23.2, "high": 23.9 },
+      "african": { "low": 22.6, "moderate": 23.3, "high": 24.0 },
+      "hispanic": { "low": 22.5, "moderate": 23.1, "high": 23.8 },
+      "other": { "low": 22.4, "moderate": 23.0, "high": 23.7 }
+    },
+    "female": {
+      "asian": { "low": 22.1, "moderate": 22.8, "high": 23.5 },
+      "caucasian": { "low": 22.3, "moderate": 23.0, "high": 23.7 },
+      "african": { "low": 22.4, "moderate": 23.1, "high": 23.8 },
+      "hispanic": { "low": 22.3, "moderate": 22.9, "high": 23.6 },
+      "other": { "low": 22.2, "moderate": 22.8, "high": 23.5 }
+    }
+  },
+
+  "preteen (10-12)": {
+    "male": {
+      "asian": { "low": 22.7, "moderate": 23.4, "high": 24.2 },
+      "caucasian": { "low": 22.9, "moderate": 23.6, "high": 24.3 },
+      "african": { "low": 23.0, "moderate": 23.7, "high": 24.4 },
+      "hispanic": { "low": 22.8, "moderate": 23.5, "high": 24.2 },
+      "other": { "low": 22.7, "moderate": 23.4, "high": 24.1 }
+    },
+    "female": {
+      "asian": { "low": 22.5, "moderate": 23.2, "high": 24.0 },
+      "caucasian": { "low": 22.7, "moderate": 23.4, "high": 24.1 },
+      "african": { "low": 22.8, "moderate": 23.5, "high": 24.2 },
+      "hispanic": { "low": 22.6, "moderate": 23.3, "high": 24.0 },
+      "other": { "low": 22.5, "moderate": 23.2, "high": 23.9 }
+    }
+  },
+
+  "teen (13-15)": {
+    "male": {
+      "asian": { "low": 23.0, "moderate": 23.8, "high": 24.5 },
+      "caucasian": { "low": 23.2, "moderate": 23.9, "high": 24.6 },
+      "african": { "low": 23.3, "moderate": 24.0, "high": 24.7 },
+      "hispanic": { "low": 23.1, "moderate": 23.8, "high": 24.5 },
+      "other": { "low": 23.0, "moderate": 23.7, "high": 24.4 }
+    },
+    "female": {
+      "asian": { "low": 22.8, "moderate": 23.6, "high": 24.3 },
+      "caucasian": { "low": 23.0, "moderate": 23.7, "high": 24.4 },
+      "african": { "low": 23.1, "moderate": 23.8, "high": 24.5 },
+      "hispanic": { "low": 22.9, "moderate": 23.6, "high": 24.3 },
+      "other": { "low": 22.8, "moderate": 23.5, "high": 24.2 }
+    }
+  },
+
+  "late_teen (16-18)": {
+    "male": {
+      "asian": { "low": 23.3, "moderate": 24.0, "high": 24.8 },
+      "caucasian": { "low": 23.4, "moderate": 24.1, "high": 24.9 },
+      "african": { "low": 23.5, "moderate": 24.2, "high": 25.0 },
+      "hispanic": { "low": 23.3, "moderate": 24.0, "high": 24.8 },
+      "other": { "low": 23.2, "moderate": 23.9, "high": 24.7 }
+    },
+    "female": {
+      "asian": { "low": 23.0, "moderate": 23.7, "high": 24.5 },
+      "caucasian": { "low": 23.1, "moderate": 23.8, "high": 24.6 },
+      "african": { "low": 23.2, "moderate": 23.9, "high": 24.7 },
+      "hispanic": { "low": 23.0, "moderate": 23.7, "high": 24.5 },
+      "other": { "low": 22.9, "moderate": 23.6, "high": 24.4 }
+    }
+  }
+},
+"spherical_eq_left": {
+  "preschool (4-6)": {
+    "male": {
+      "asian": { "low": -0.5, "moderate": -1.0, "high": -1.5 },
+      "caucasian": { "low": -0.25, "moderate": -0.75, "high": -1.25 },
+      "african": { "low": -0.3, "moderate": -0.8, "high": -1.3 },
+      "hispanic": { "low": -0.3, "moderate": -0.8, "high": -1.2 },
+      "other": { "low": -0.3, "moderate": -0.9, "high": -1.3 }
+    },
+    "female": {
+      "asian": { "low": -0.5, "moderate": -0.9, "high": -1.4 },
+      "caucasian": { "low": -0.2, "moderate": -0.6, "high": -1.0 },
+      "african": { "low": -0.2, "moderate": -0.7, "high": -1.2 },
+      "hispanic": { "low": -0.25, "moderate": -0.7, "high": -1.1 },
+      "other": { "low": -0.25, "moderate": -0.8, "high": -1.2 }
+    }
+  },
+
+  "early_primary (7-9)": {
+    "male": {
+      "asian": { "low": -0.75, "moderate": -1.5, "high": -2.5 },
+      "caucasian": { "low": -0.5, "moderate": -1.25, "high": -2.0 },
+      "african": { "low": -0.6, "moderate": -1.4, "high": -2.2 },
+      "hispanic": { "low": -0.5, "moderate": -1.3, "high": -2.0 },
+      "other": { "low": -0.5, "moderate": -1.4, "high": -2.1 }
+    },
+    "female": {
+      "asian": { "low": -0.7, "moderate": -1.4, "high": -2.4 },
+      "caucasian": { "low": -0.4, "moderate": -1.1, "high": -1.9 },
+      "african": { "low": -0.5, "moderate": -1.3, "high": -2.0 },
+      "hispanic": { "low": -0.4, "moderate": -1.2, "high": -1.8 },
+      "other": { "low": -0.5, "moderate": -1.3, "high": -2.0 }
+    }
+  },
+
+  "preteen (10-12)": {
+    "male": {
+      "asian": { "low": -1.0, "moderate": -2.0, "high": -3.0 },
+      "caucasian": { "low": -0.75, "moderate": -1.75, "high": -2.75 },
+      "african": { "low": -0.8, "moderate": -1.8, "high": -2.8 },
+      "hispanic": { "low": -0.7, "moderate": -1.7, "high": -2.6 },
+      "other": { "low": -0.8, "moderate": -1.8, "high": -2.7 }
+    },
+    "female": {
+      "asian": { "low": -0.9, "moderate": -1.8, "high": -2.8 },
+      "caucasian": { "low": -0.6, "moderate": -1.6, "high": -2.6 },
+      "african": { "low": -0.7, "moderate": -1.7, "high": -2.7 },
+      "hispanic": { "low": -0.6, "moderate": -1.6, "high": -2.5 },
+      "other": { "low": -0.7, "moderate": -1.7, "high": -2.6 }
+    }
+  },
+
+  "teen (13-15)": {
+    "male": {
+      "asian": { "low": -1.3, "moderate": -2.5, "high": -4.0 },
+      "caucasian": { "low": -1.0, "moderate": -2.2, "high": -3.5 },
+      "african": { "low": -1.0, "moderate": -2.3, "high": -3.6 },
+      "hispanic": { "low": -1.0, "moderate": -2.2, "high": -3.4 },
+      "other": { "low": -1.1, "moderate": -2.3, "high": -3.5 }
+    },
+    "female": {
+      "asian": { "low": -1.2, "moderate": -2.3, "high": -3.8 },
+      "caucasian": { "low": -0.9, "moderate": -2.0, "high": -3.2 },
+      "african": { "low": -1.0, "moderate": -2.1, "high": -3.4 },
+      "hispanic": { "low": -0.9, "moderate": -2.0, "high": -3.3 },
+      "other": { "low": -1.0, "moderate": -2.1, "high": -3.3 }
+    }
+  },
+
+  "late_teen (16-18)": {
+    "male": {
+      "asian": { "low": -1.5, "moderate": -3.0, "high": -4.5 },
+      "caucasian": { "low": -1.2, "moderate": -2.8, "high": -4.0 },
+      "african": { "low": -1.3, "moderate": -2.9, "high": -4.2 },
+      "hispanic": { "low": -1.2, "moderate": -2.7, "high": -4.0 },
+      "other": { "low": -1.3, "moderate": -2.8, "high": -4.1 }
+    },
+    "female": {
+      "asian": { "low": -1.3, "moderate": -2.7, "high": -4.2 },
+      "caucasian": { "low": -1.1, "moderate": -2.6, "high": -3.9 },
+      "african": { "low": -1.2, "moderate": -2.7, "high": -4.0 },
+      "hispanic": { "low": -1.1, "moderate": -2.6, "high": -3.8 },
+      "other": { "low": -1.2, "moderate": -2.7, "high": -4.0 }
+    }
+  }
+},
+"spherical_eq_right": {
+  "preschool (4-6)": {
+    "male": {
+      "asian": { "low": -0.5, "moderate": -1.0, "high": -1.5 },
+      "caucasian": { "low": -0.25, "moderate": -0.75, "high": -1.25 },
+      "african": { "low": -0.3, "moderate": -0.8, "high": -1.3 },
+      "hispanic": { "low": -0.3, "moderate": -0.8, "high": -1.2 },
+      "other": { "low": -0.3, "moderate": -0.9, "high": -1.3 }
+    },
+    "female": {
+      "asian": { "low": -0.5, "moderate": -0.9, "high": -1.4 },
+      "caucasian": { "low": -0.2, "moderate": -0.6, "high": -1.0 },
+      "african": { "low": -0.2, "moderate": -0.7, "high": -1.2 },
+      "hispanic": { "low": -0.25, "moderate": -0.7, "high": -1.1 },
+      "other": { "low": -0.25, "moderate": -0.8, "high": -1.2 }
+    }
+  },
+
+  "early_primary (7-9)": {
+    "male": {
+      "asian": { "low": -0.75, "moderate": -1.5, "high": -2.5 },
+      "caucasian": { "low": -0.5, "moderate": -1.25, "high": -2.0 },
+      "african": { "low": -0.6, "moderate": -1.4, "high": -2.2 },
+      "hispanic": { "low": -0.5, "moderate": -1.3, "high": -2.0 },
+      "other": { "low": -0.5, "moderate": -1.4, "high": -2.1 }
+    },
+    "female": {
+      "asian": { "low": -0.7, "moderate": -1.4, "high": -2.4 },
+      "caucasian": { "low": -0.4, "moderate": -1.1, "high": -1.9 },
+      "african": { "low": -0.5, "moderate": -1.3, "high": -2.0 },
+      "hispanic": { "low": -0.4, "moderate": -1.2, "high": -1.8 },
+      "other": { "low": -0.5, "moderate": -1.3, "high": -2.0 }
+    }
+  },
+
+  "preteen (10-12)": {
+    "male": {
+      "asian": { "low": -1.0, "moderate": -2.0, "high": -3.0 },
+      "caucasian": { "low": -0.75, "moderate": -1.75, "high": -2.75 },
+      "african": { "low": -0.8, "moderate": -1.8, "high": -2.8 },
+      "hispanic": { "low": -0.7, "moderate": -1.7, "high": -2.6 },
+      "other": { "low": -0.8, "moderate": -1.8, "high": -2.7 }
+    },
+    "female": {
+      "asian": { "low": -0.9, "moderate": -1.8, "high": -2.8 },
+      "caucasian": { "low": -0.6, "moderate": -1.6, "high": -2.6 },
+      "african": { "low": -0.7, "moderate": -1.7, "high": -2.7 },
+      "hispanic": { "low": -0.6, "moderate": -1.6, "high": -2.5 },
+      "other": { "low": -0.7, "moderate": -1.7, "high": -2.6 }
+    }
+  },
+
+  "teen (13-15)": {
+    "male": {
+      "asian": { "low": -1.3, "moderate": -2.5, "high": -4.0 },
+      "caucasian": { "low": -1.0, "moderate": -2.2, "high": -3.5 },
+      "african": { "low": -1.0, "moderate": -2.3, "high": -3.6 },
+      "hispanic": { "low": -1.0, "moderate": -2.2, "high": -3.4 },
+      "other": { "low": -1.1, "moderate": -2.3, "high": -3.5 }
+    },
+    "female": {
+      "asian": { "low": -1.2, "moderate": -2.3, "high": -3.8 },
+      "caucasian": { "low": -0.9, "moderate": -2.0, "high": -3.2 },
+      "african": { "low": -1.0, "moderate": -2.1, "high": -3.4 },
+      "hispanic": { "low": -0.9, "moderate": -2.0, "high": -3.3 },
+      "other": { "low": -1.0, "moderate": -2.1, "high": -3.3 }
+    }
+  },
+
+  "late_teen (16-18)": {
+    "male": {
+      "asian": { "low": -1.5, "moderate": -3.0, "high": -4.5 },
+      "caucasian": { "low": -1.2, "moderate": -2.8, "high": -4.0 },
+      "african": { "low": -1.3, "moderate": -2.9, "high": -4.2 },
+      "hispanic": { "low": -1.2, "moderate": -2.7, "high": -4.0 },
+      "other": { "low": -1.3, "moderate": -2.8, "high": -4.1 }
+    },
+    "female": {
+      "asian": { "low": -1.3, "moderate": -2.7, "high": -4.2 },
+      "caucasian": { "low": -1.1, "moderate": -2.6, "high": -3.9 },
+      "african": { "low": -1.2, "moderate": -2.7, "high": -4.0 },
+      "hispanic": { "low": -1.1, "moderate": -2.6, "high": -3.8 },
+      "other": { "low": -1.2, "moderate": -2.7, "high": -4.0 }
+    }
+  }
+},
+"keratometry_left": {
+  "preschool (4-6)": {
+    "male": {
+      "asian": { "low": 42.0, "moderate": 43.0, "high": 44.5 },
+      "caucasian": { "low": 42.2, "moderate": 43.2, "high": 44.7 },
+      "african": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "hispanic": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "other": { "low": 42.1, "moderate": 43.1, "high": 44.6 }
+    },
+    "female": {
+      "asian": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "caucasian": { "low": 42.4, "moderate": 43.4, "high": 44.9 },
+      "african": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "hispanic": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "other": { "low": 42.2, "moderate": 43.2, "high": 44.7 }
+    }
+  },
+  "early_primary (7-9)": {
+    "male": {
+      "asian": { "low": 42.1, "moderate": 43.1, "high": 44.6 },
+      "caucasian": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "african": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "hispanic": { "low": 42.4, "moderate": 43.4, "high": 44.9 },
+      "other": { "low": 42.2, "moderate": 43.2, "high": 44.7 }
+    },
+    "female": {
+      "asian": { "low": 42.4, "moderate": 43.4, "high": 44.9 },
+      "caucasian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "african": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "hispanic": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "other": { "low": 42.3, "moderate": 43.3, "high": 44.8 }
+    }
+  },
+  "preteen (10-12)": {
+    "male": {
+      "asian": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "caucasian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "african": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "hispanic": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "other": { "low": 42.4, "moderate": 43.4, "high": 44.9 }
+    },
+    "female": {
+      "asian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "caucasian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "african": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "hispanic": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "other": { "low": 42.5, "moderate": 43.5, "high": 45.0 }
+    }
+  },
+  "teen (13-15)": {
+    "male": {
+      "asian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "caucasian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "african": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "hispanic": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "other": { "low": 42.5, "moderate": 43.5, "high": 45.0 }
+    },
+    "female": {
+      "asian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "caucasian": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "african": { "low": 42.9, "moderate": 43.9, "high": 45.4 },
+      "hispanic": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "other": { "low": 42.6, "moderate": 43.6, "high": 45.1 }
+    }
+  },
+  "late_teen (16-18)": {
+    "male": {
+      "asian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "caucasian": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "african": { "low": 42.9, "moderate": 43.9, "high": 45.4 },
+      "hispanic": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "other": { "low": 42.6, "moderate": 43.6, "high": 45.1 }
+    },
+    "female": {
+      "asian": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "caucasian": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "african": { "low": 43.0, "moderate": 44.0, "high": 45.5 },
+      "hispanic": { "low": 42.9, "moderate": 43.9, "high": 45.4 },
+      "other": { "low": 42.7, "moderate": 43.7, "high": 45.2 }
+    }
+  }
+},
+"keratometry_right": {
+  "preschool (4-6)": {
+    "male": {
+      "asian": { "low": 42.0, "moderate": 43.0, "high": 44.5 },
+      "caucasian": { "low": 42.2, "moderate": 43.2, "high": 44.7 },
+      "african": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "hispanic": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "other": { "low": 42.1, "moderate": 43.1, "high": 44.6 }
+    },
+    "female": {
+      "asian": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "caucasian": { "low": 42.4, "moderate": 43.4, "high": 44.9 },
+      "african": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "hispanic": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "other": { "low": 42.2, "moderate": 43.2, "high": 44.7 }
+    }
+  },
+  "early_primary (7-9)": {
+    "male": {
+      "asian": { "low": 42.1, "moderate": 43.1, "high": 44.6 },
+      "caucasian": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "african": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "hispanic": { "low": 42.4, "moderate": 43.4, "high": 44.9 },
+      "other": { "low": 42.2, "moderate": 43.2, "high": 44.7 }
+    },
+    "female": {
+      "asian": { "low": 42.4, "moderate": 43.4, "high": 44.9 },
+      "caucasian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "african": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "hispanic": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "other": { "low": 42.3, "moderate": 43.3, "high": 44.8 }
+    }
+  },
+  "preteen (10-12)": {
+    "male": {
+      "asian": { "low": 42.3, "moderate": 43.3, "high": 44.8 },
+      "caucasian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "african": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "hispanic": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "other": { "low": 42.4, "moderate": 43.4, "high": 44.9 }
+    },
+    "female": {
+      "asian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "caucasian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "african": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "hispanic": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "other": { "low": 42.5, "moderate": 43.5, "high": 45.0 }
+    }
+  },
+  "teen (13-15)": {
+    "male": {
+      "asian": { "low": 42.5, "moderate": 43.5, "high": 45.0 },
+      "caucasian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "african": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "hispanic": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "other": { "low": 42.5, "moderate": 43.5, "high": 45.0 }
+    },
+    "female": {
+      "asian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "caucasian": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "african": { "low": 42.9, "moderate": 43.9, "high": 45.4 },
+      "hispanic": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "other": { "low": 42.6, "moderate": 43.6, "high": 45.1 }
+    }
+  },
+  "late_teen (16-18)": {
+    "male": {
+      "asian": { "low": 42.6, "moderate": 43.6, "high": 45.1 },
+      "caucasian": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "african": { "low": 42.9, "moderate": 43.9, "high": 45.4 },
+      "hispanic": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "other": { "low": 42.6, "moderate": 43.6, "high": 45.1 }
+    },
+    "female": {
+      "asian": { "low": 42.7, "moderate": 43.7, "high": 45.2 },
+      "caucasian": { "low": 42.8, "moderate": 43.8, "high": 45.3 },
+      "african": { "low": 43.0, "moderate": 44.0, "high": 45.5 },
+      "hispanic": { "low": 42.9, "moderate": 43.9, "high": 45.4 },
+      "other": { "low": 42.7, "moderate": 43.7, "high": 45.2 }
+    }
+  }
+},
+"cylinder_left": {
+  "preschool (4-6)": {
+    "thresholds": { "low": 0.5, "moderate": 1.0, "high": 1.5 }
+  },
+  "early_primary (7-9)": {
+    "thresholds": { "low": 0.5, "moderate": 1.25, "high": 1.75 }
+  },
+  "preteen (10-12)": {
+    "thresholds": { "low": 0.75, "moderate": 1.25, "high": 1.75 }
+  },
+  "teen (13-15)": {
+    "thresholds": { "low": 0.75, "moderate": 1.5, "high": 2.0 }
+  },
+  "late_teen (16-18)": {
+    "thresholds": { "low": 0.75, "moderate": 1.5, "high": 2.0 }
+  }
+},
+"cylinder_right": {
+  "preschool (4-6)": {
+    "thresholds": { "low": 0.5, "moderate": 1.0, "high": 1.5 }
+  },
+  "early_primary (7-9)": {
+    "thresholds": { "low": 0.5, "moderate": 1.25, "high": 1.75 }
+  },
+  "preteen (10-12)": {
+    "thresholds": { "low": 0.75, "moderate": 1.25, "high": 1.75 }
+  },
+  "teen (13-15)": {
+    "thresholds": { "low": 0.75, "moderate": 1.5, "high": 2.0 }
+  },
+  "late_teen (16-18)": {
+    "thresholds": { "low": 0.75, "moderate": 1.5, "high": 2.0 }
+  }
+},
+"lens_power_left": {
+  "preschool (4-6)": {
+    "thresholds": { "low": 22.0, "moderate": 20.5, "high": 18.5 }
+  },
+  "early_primary (7-9)": {
+    "thresholds": { "low": 21.5, "moderate": 20.0, "high": 18.0 }
+  },
+  "preteen (10-12)": {
+    "thresholds": { "low": 21.0, "moderate": 19.5, "high": 17.5 }
+  },
+  "teen (13-15)": {
+    "thresholds": { "low": 20.5, "moderate": 19.0, "high": 17.0 }
+  },
+  "late_teen (16-18)": {
+    "thresholds": { "low": 20.0, "moderate": 18.5, "high": 16.5 }
+  }
+},
+"lens_power_right": {
+  "preschool (4-6)": {
+    "thresholds": { "low": 22.0, "moderate": 20.5, "high": 18.5 }
+  },
+  "early_primary (7-9)": {
+    "thresholds": { "low": 21.5, "moderate": 20.0, "high": 18.0 }
+  },
+  "preteen (10-12)": {
+    "thresholds": { "low": 21.0, "moderate": 19.5, "high": 17.5 }
+  },
+  "teen (13-15)": {
+    "thresholds": { "low": 20.5, "moderate": 19.0, "high": 17.0 }
+  },
+  "late_teen (16-18)": {
+    "thresholds": { "low": 20.0, "moderate": 18.5, "high": 16.5 }
+  }
+},
+"al_percentile_left": {
+  "thresholds": {
+  "low": 60,
+  "moderate": 80,
+  "high": 95
+  }
+},
+"al_percentile_right": {
+  "thresholds": {
+    "low": 60,
+    "moderate": 80,
+    "high": 95
+  }
+},
+"daily_outdoor_time_hours": {
+  "preschool (4-6)": {
+    "thresholds": { "low": 2.0, "moderate": 1.0, "high": 0.5 }
+  },
+  "early_primary (7-9)": {
+    "thresholds": { "low": 1.5, "moderate": 0.75, "high": 0.25 }
+  },
+  "preteen (10-12)": {
+    "thresholds": { "low": 1.0, "moderate": 0.5, "high": 0.25 }
+  },
+  "teen (13-15)": {
+    "thresholds": { "low": 1.0, "moderate": 0.5, "high": 0.25 }
+  },
+  "late_teen (16-18)": {
+    "thresholds": { "low": 0.75, "moderate": 0.4, "high": 0.2 }
+  }
+},
+"average_sleep_hours": {
+  "preschool (4-6)": {
+    "thresholds": { "low": 11, "moderate": 9, "high": 8 }
+  },
+  "early_primary (7-9)": {
+    "thresholds": { "low": 10.5, "moderate": 9, "high": 7.5 }
+  },
+  "preteen (10-12)": {
+    "thresholds": { "low": 10, "moderate": 8.5, "high": 7 }
+  },
+  "teen (13-15)": {
+    "thresholds": { "low": 9, "moderate": 7.5, "high": 6.5 }
+  },
+  "late_teen (16-18)": {
+    "thresholds": { "low": 8.5, "moderate": 7, "high": 6 }
+  }
+},
+"hydration_level": {
+  "rules": {
+    "good": 0,
+    "moderate": 1,
+    "poor": 2
+  }
+},
+"diet_quality": {
+  "rules": {
+    "good": 0,
+    "moderate": 1,
+    "poor": 2
+  }
+},
+"room_lighting": {
+  "rules": {
+    "bright": 0,
+    "dim": 1
+  }
+},
+"screen_time_hours_per_day": {
+  "preschool (4-6)": {
+    "thresholds": { "low": 0.5, "moderate": 1.0, "high": 1.5 }
+  },
+  "early_primary (7-9)": {
+    "thresholds": { "low": 1.0, "moderate": 2.0, "high": 3.0 }
+  },
+  "preteen (10-12)": {
+    "thresholds": { "low": 1.5, "moderate": 2.5, "high": 4.0 }
+  },
+  "teen (13-15)": {
+    "thresholds": { "low": 2.0, "moderate": 3.5, "high": 5.0 }
+  },
+  "late_teen (16-18)": {
+    "thresholds": { "low": 2.5, "moderate": 4.0, "high": 6.0 }
+  }
+},
+"common_symptoms": {
+  "rules": {
+    "none": 0,
+    "one_symptom": 0.5,
+    "two_symptom":1,
+    "three_or_more": 2
+  }
+},
+"parental_history_myopia": {
+  "rules": {
+    "none": 0,
+    "one_parent": 1,
+    "both_parents": 2
+  }
+}
+  
+}

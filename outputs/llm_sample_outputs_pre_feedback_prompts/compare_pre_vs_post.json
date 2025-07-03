@@ -1,0 +1,280 @@
+##### COMPARE THE OUTPUTS:
+
+PRE FEEDBACK LLM OUTPUT
+==============================
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Blink Speed Race Exercise",
+        "duration": "45 seconds",
+        "explanation": "Blink as fast as you can and then relax your eyes. Ready, set, go!",
+        "benefit": "Helps keep eyes moist and reduce dryness",
+        "video_filename": "mirror_blink_game.mp4"
+      },
+      {
+        "name": "Eye Strain Relief Massage Exercise",
+        "duration": "45 seconds",
+        "explanation": "Gently massage around your eyes in circular motions to relax them.",
+        "benefit": "Relieves tension and soothes tired eyes",
+        "video_filename": "eye_strain_relief.mp4"
+      },
+      {
+        "name": "Focus Training Game",
+        "duration": "2 minutes",
+        "explanation": "Follow the bouncing ball with your eyes only, no head movement!",
+        "benefit": "Improves focus and eye muscle control",
+        "video_filename": "focus_training_game.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Spinach paratha",
+          "Papaya slices"
+        ],
+        "portion_size": "1 paratha (≈100g), 1 small bowl (≈75g)",
+        "benefit": "Strengthens vision by nourishing the retina",
+        "nutrients": {
+          "Vitamin A": "300 µg - 👁️ Supports retina health",
+          "Lutein": "2 mg - 🌿 Filters harmful blue light"
+        },
+        "calorie_information": "Spinach paratha ≈ 200 kcal, Papaya slices ≈ 30 kcal — Total ≈ 230 kcal",
+        "image_prompt": "A spinach paratha with papaya slices on a bright, child-friendly Indian-style breakfast plate"    
+      },
+      "lunch": {
+        "food": [
+          "Dal",
+          "Brown rice"
+        ],
+        "portion_size": "1 bowl dal (≈150g), ½ cup rice (≈100g)",
+        "benefit": "Provides essential nutrients for eye health",
+        "nutrients": {
+          "Protein": "8 g - 💪 Supports eye tissue repair",
+          "Iron": "2 mg - 🔋 Helps oxygenate eye cells"
+        },
+        "calorie_information": "Dal ≈ 150 kcal, Brown rice ≈ 110 kcal — Total ≈ 260 kcal",
+        "image_prompt": "A bowl of dal with brown rice served on a colorful Indian-style plate"
+      },
+      "snack": {
+        "food": [
+          "Carrot sticks",
+          "Hummus"
+        ],
+        "portion_size": "1 medium carrot (≈50g), 2 tbsp hummus (≈30g)",
+        "benefit": "Boosts night vision and eye health",
+        "nutrients": {
+          "Vitamin A": "400 µg - 👁️ Supports retina health",
+          "Fiber": "1.5 g - 🌱 Aids digestion"
+        },
+        "calorie_information": "Carrot sticks ≈ 20 kcal, Hummus ≈ 60 kcal — Total ≈ 80 kcal",
+        "image_prompt": "Carrot sticks with a small bowl of hummus, placed on a kid-friendly colorful plate"
+      },
+      "dinner": {
+        "food": [
+          "Paneer curry",
+          "Whole wheat roti"
+        ],
+        "portion_size": "1 serving paneer (≈100g), 1 roti (≈50g)",
+        "benefit": "Supports overall eye health",
+        "nutrients": {
+          "Calcium": "150 mg - 🦴 Keeps eye muscles strong",
+          "Vitamin B12": "0.5 µg - 🧠 Supports nerve function"
+        },
+        "calorie_information": "Paneer curry ≈ 250 kcal, Whole wheat roti ≈ 150 kcal — Total ≈ 400 kcal",
+        "image_prompt": "A serving of paneer curry with a whole wheat roti on a traditional Indian dinner plate"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour",
+    "child_message": "Blink blink like a bunny! Your eyes will thank you!",
+    "parent_nudge": "Remind your child to blink often during screen time to avoid dry eyes"
+  }
+}
+------------------------------------------------------------------------------------------
+
+POST FEEDBACK LLM OUTPUT
+==========================
+for first api call
+
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Blink Speed Race Exercise",
+        "duration": "45 seconds",
+        "explanation": "See how many times you can blink in 45 seconds. Ready, set, blink!",
+        "benefit": "Helps reduce dryness and strain by keeping eyes moist",
+        "video_filename": "mirror_blink_game.mp4"
+      },
+      {
+        "name": "Astigmatism Tracking Movement Exercise",
+        "duration": "45 seconds",
+        "explanation": "Follow the moving object with your eyes, not your head!",
+        "benefit": "Improves clarity and reduces distortion in vision",
+        "video_filename": "tracking_movement_exercise.mp4"
+      },
+      {
+        "name": "Focus Training Game",
+        "duration": "2 minutes",
+        "explanation": "Track the ball as it moves around the screen without moving your head!",
+        "benefit": "Enhances focus and eye muscle coordination",
+        "video_filename": "focus_training_game.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Carrot and beetroot smoothie",
+          "1 small banana"
+        ],
+        "portion_size": "200 ml smoothie, 1 small banana",
+        "benefit": "Boosts retina health and protects against light sensitivity",
+        "calorie_information": "Smoothie (≈100 kcal), Banana (≈90 kcal) — Total ≈ 190 kcal",
+        "nutrients": {
+          "Beta-Carotene": "400 µg - 🥕 Supports retina health",
+          "Vitamin C": "30 mg - 💪 Boosts vision clarity"
+        },
+        "image_prompt": "A bright glass of carrot and beetroot smoothie with a small banana on a colorful plate in a sunny kitchen"
+      },
+      "lunch": {
+        "food": [
+          "Palak paneer",
+          "Roti"
+        ],
+        "portion_size": "1 bowl palak paneer (≈150g), 2 medium roti (≈50g each)",
+        "benefit": "Enhances vision by providing essential nutrients to the eyes",
+        "calorie_information": "Palak paneer (≈250 kcal), Roti (≈150 kcal) — Total ≈ 400 kcal",
+        "nutrients": {
+          "Vitamin A": "300 µg - 👁️ Supports retina health",
+          "Iron": "2 mg - 🔋 Strengthens blood supply to eyes"
+        },
+        "image_prompt": "A bowl of palak paneer with two roti on a traditional Indian-patterned plate"
+      },
+      "snack": {
+        "food": [
+          "Almonds",
+          "1 small apple"
+        ],
+        "portion_size": "10 almonds, 1 small apple",
+        "benefit": "Provides antioxidants to protect eyes from damage",
+        "calorie_information": "Almonds (≈70 kcal), Apple (≈52 kcal) — Total ≈ 122 kcal",
+        "nutrients": {
+          "Vitamin E": "3 mg - 🥜 Protects eyes from oxidative damage",
+          "Fiber": "3 g - 🍎 Supports overall eye health"
+        },
+        "image_prompt": "A handful of almonds next to a small apple on a bright, kid-friendly snack plate"
+      },
+      "dinner": {
+        "food": [
+          "Mixed vegetable soup",
+          "Brown rice"
+        ],
+        "portion_size": "1 bowl soup (≈150 ml), 1 cup brown rice (≈150g)",
+        "benefit": "Provides vital nutrients for eye comfort and function",
+        "calorie_information": "Soup (≈100 kcal), Brown rice (≈215 kcal) — Total ≈ 315 kcal",
+        "nutrients": {
+          "Lutein": "2 mg - 🌿 Filters harmful blue light",
+          "Zinc": "1 mg - 🛡️ Supports eye health"
+        },
+        "image_prompt": "A steaming bowl of mixed vegetable soup with a serving of brown rice on a colorful dinner mat"    
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Try doing 20-20-20 breaks together during screen time"
+  }
+}
+
+for 2nd api call
+
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Astigmatism Tracking Movement Exercise",
+        "duration": "45 seconds",
+        "explanation": "Follow a moving object with your eyes, keeping your head still. Imagine tracing a path with your eyes.",
+        "benefit": "Helps improve eye coordination and reduces blurry vision",
+        "video_filename": "tracking_movement_exercise.mp4"
+      },
+      {
+        "name": "Blink Speed Race Exercise",
+        "duration": "45 seconds",
+        "explanation": "Blink rapidly and then slowly, like a race car speeding up and slowing down.",
+        "benefit": "Relieves dryness and frequent blinking",
+        "video_filename": "mirror_blink_game.mp4"
+      },
+      {
+        "name": "Focus Training Game",
+        "duration": "2 minutes",
+        "explanation": "Keep your eyes on the bouncing ball on the screen, and try not to blink!",
+        "benefit": "Improves focus and concentration",
+        "video_filename": "focus_training_game.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Oats porridge",
+          "1 medium mango"
+        ],
+        "portion_size": "Oats porridge (150g), 1 medium mango (≈150g)",
+        "benefit": "Provides energy and essential nutrients for eye health",
+        "nutrients": {
+          "Vitamin A": "54 µg - 👁️ Supports retina health",
+          "Vitamin C": "60 mg - 🍊 Boosts eye immunity"
+        },
+        "calorie_information": "Oats porridge ≈ 150 kcal, Mango ≈ 100 kcal — Total ≈ 250 kcal",
+        "image_prompt": "A bowl of oats porridge with slices of fresh mango on top, in a child-friendly Indian breakfast setting"
+      },
+      "lunch": {
+        "food": [
+          "Palak paneer",
+          "Brown rice"
+        ],
+        "portion_size": "Palak paneer (150g), Brown rice (100g)",
+        "benefit": "Strengthens vision and filters harmful light",
+        "nutrients": {
+          "Lutein": "2 mg - 🌿 Filters harmful blue light",
+          "Calcium": "150 mg - 🦴 Supports overall eye health"
+        },
+        "calorie_information": "Palak paneer ≈ 200 kcal, Brown rice ≈ 110 kcal — Total ≈ 310 kcal",
+        "image_prompt": "A plate of palak paneer with a side of brown rice, presented in a colorful, child-friendly manner"
+      },
+      "snack": {
+        "food": [
+          "Carrot sticks",
+          "Hummus"
+        ],
+        "portion_size": "Carrot sticks (50g), Hummus (50g)",
+        "benefit": "Supports eye development and reduces eye strain",
+        "nutrients": {
+          "Beta-carotene": "420 µg - 🥕 Protects against night blindness",
+          "Protein": "2 g - 💪 Supports muscle strength"
+        },
+        "calorie_information": "Carrot sticks ≈ 25 kcal, Hummus ≈ 100 kcal — Total ≈ 125 kcal",
+        "image_prompt": "Crunchy carrot sticks with a small bowl of hummus, on a colorful, child-friendly plate"
+      },
+      "dinner": {
+        "food": [
+          "Veggie khichdi",
+          "Curd"
+        ],
+        "portion_size": "Veggie khichdi (150g), Curd (100g)",
+        "benefit": "Aids digestion and supports eye health",
+        "nutrients": {
+          "Vitamin B2": "0.2 mg - 🍚 Helps reduce eye fatigue",
+          "Probiotics": "1 billion CFU - 🦠 Promotes gut health"
+        },
+        "calorie_information": "Veggie khichdi ≈ 180 kcal, Curd ≈ 50 kcal — Total ≈ 230 kcal",
+        "image_prompt": "A warm bowl of veggie khichdi with a side of fresh curd, presented in a cozy, child-friendly Indian setting"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Blink blink like a bunny! Your eyes will thank you!",
+    "parent_nudge": "Remind your child to blink often during screen time to avoid dry eyes"
+  }
+}

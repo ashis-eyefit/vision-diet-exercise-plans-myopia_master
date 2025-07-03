@@ -1,0 +1,129 @@
+{
+    "axial_length_left": {
+      "risk_level": "high",
+      "cause": "The axial length in the left eye is significantly longer than average for children of this age, which is often associated with high myopia risk.",
+      "future_consequences": "If unmanaged, this could lead to progressive myopia and increase the risk of retinal detachment, glaucoma, and other vision problems.",
+      "recommendations": "Encourage outdoor activities with exposure to natural light to slow axial elongation. Regular eye check-ups are essential.",
+      "timeline": "Improvement can be expected over 6–12 months with consistent lifestyle changes."
+    },
+    "axial_length_right": {
+      "risk_level": "low",
+      "cause": "The right eye's axial length is within normal ranges for a child of this age.",
+      "future_consequences": "Currently, there is no significant risk of myopia progression.",
+      "recommendations": "Maintain regular outdoor activities and eye exams to prevent future issues.",
+      "timeline": "Ongoing monitoring is recommended."
+    },
+    "spherical_eq_left": {
+      "risk_level": "high",
+      "cause": "The high spherical equivalent indicates significant myopia in the left eye.",
+      "future_consequences": "Unmanaged myopia can lead to further vision deterioration and increased risk of eye diseases.",
+      "recommendations": "Implement myopia management strategies such as increased outdoor time and reduced screen use.",
+      "timeline": "Expect gradual improvement over 6–12 months with adherence to recommendations."
+    },
+    "spherical_eq_right": {
+      "risk_level": "high",
+      "cause": "The right eye also shows a high spherical equivalent, indicative of myopia.",
+      "future_consequences": "Similar to the left eye, unmanaged myopia can progress and lead to complications.",        
+      "recommendations": "Follow a comprehensive myopia management plan, focusing on lifestyle changes.",
+      "timeline": "Visible improvements can occur over 6–12 months with consistent efforts."
+    },
+    "keratometry_left": {
+      "risk_level": "high",
+      "cause": "High keratometry readings suggest steep corneal curvature, often linked with myopia.",
+      "future_consequences": "This condition can exacerbate myopic progression if not managed.",
+      "recommendations": "Regular eye exams and potential vision therapy may help manage this risk.",
+      "timeline": "Changes can be seen over a period of 6–12 months."
+    },
+    "keratometry_right": {
+      "risk_level": "moderate",
+      "cause": "Moderate corneal curvature is noted, which can contribute to myopia.",
+      "future_consequences": "Without intervention, there's a moderate risk of myopia progression.",
+      "recommendations": "Monitor curvature changes with regular optometrist visits and ensure balanced visual activities.",
+      "timeline": "Improvement can be observed over 6–12 months with proper care."
+    },
+    "cylinder_left": {
+      "risk_level": "moderate",
+      "cause": "The moderate cylinder value suggests astigmatism, which can affect vision clarity.",
+      "future_consequences": "May lead to eye strain or headaches if not corrected.",
+      "recommendations": "Regular eye exams and corrective lenses if prescribed can help manage this condition.",        
+      "timeline": "Vision clarity can improve within 3–6 months with corrective measures."
+    },
+    "cylinder_right": {
+      "risk_level": "low",
+      "cause": "The cylinder value is within normal limits, indicating minimal astigmatism.",
+      "future_consequences": "No significant issues are expected at present.",
+      "recommendations": "Continue with regular eye checks to ensure stability.",
+      "timeline": "Ongoing monitoring is advised."
+    },
+    "al_percentile_left": {
+      "risk_level": "high",
+      "cause": "The axial length percentile is high, correlating with significant myopic risk.",
+      "future_consequences": "Potential for increased myopia and related complications.",
+      "recommendations": "Increase outdoor activities and maintain a balanced vision lifestyle.",
+      "timeline": "Long-term improvement expected with consistent intervention over 6–12 months."
+    },
+    "al_percentile_right": {
+      "risk_level": "high",
+      "cause": "Similar to the left eye, the right eye's axial length percentile is high.",
+      "future_consequences": "This heightens the risk of myopia progression if not addressed.",
+      "recommendations": "Adopt a proactive approach with lifestyle modifications and regular eye care.",
+      "timeline": "Improvement anticipated over 6–12 months with lifestyle changes."
+    },
+    "daily_outdoor_time_hours": {
+      "risk_level": "high",
+      "cause": "Insufficient outdoor time is a known risk factor for myopia progression.",
+      "future_consequences": "Lack of outdoor exposure can accelerate myopic changes.",
+      "recommendations": "Aim for at least 2 hours of outdoor activity daily to mitigate myopia risk.",
+      "timeline": "Positive changes can be seen over 6–12 months with increased outdoor time."
+    },
+    "screen_time_hours_per_day": {
+      "risk_level": "high",
+      "cause": "Excessive screen time is contributing to visual strain and myopia risk.",
+      "future_consequences": "Prolonged screen use can lead to further vision deterioration.",
+      "recommendations": "Limit screen time and encourage regular breaks to reduce eye strain.",
+      "timeline": "Improvements can be expected within 3–6 months of reducing screen time."
+    },
+    "average_sleep_hours": {
+      "risk_level": "high",
+      "cause": "Inadequate sleep is linked to poor eye health and increased myopia risk.",
+      "future_consequences": "Poor sleep can exacerbate vision problems and overall well-being.",
+      "recommendations": "Ensure at least 9–10 hours of sleep per night to support eye health.",
+      "timeline": "Enhanced sleep quality can lead to better eye health within a few months."
+    },
+    "room_lighting": {
+      "risk_level": "high",
+      "cause": "Inadequate room lighting can contribute to eye strain and myopia.",
+      "future_consequences": "Poor lighting conditions may worsen vision over time.",
+      "recommendations": "Improve lighting in study and play areas to reduce strain.",
+      "timeline": "Effective lighting changes can yield results within weeks."
+    },
+    "hydration_level": {
+      "risk_level": "moderate",
+      "cause": "Moderate hydration levels are not optimal for eye health.",
+      "future_consequences": "Dehydration can lead to dry eyes and discomfort.",
+      "recommendations": "Encourage regular water intake throughout the day.",
+      "timeline": "Improved hydration can have benefits within days to weeks."
+    },
+    "diet_quality": {
+      "risk_level": "high",
+      "cause": "Poor diet quality may lack essential nutrients for eye health.",
+      "future_consequences": "Nutrient deficiencies can contribute to progressive vision issues.",
+      "recommendations": "Incorporate a balanced diet rich in omega-3s, vitamins A, C, and E.",
+      "timeline": "Dietary improvements can support eye health over several months."
+    },
+    "common_symptoms": {
+      "risk_level": "low",
+      "cause": "Few or mild symptoms suggest minimal immediate vision concerns.",
+      "future_consequences": "No significant issues are expected currently.",
+      "recommendations": "Continue monitoring and maintain healthy vision practices.",
+      "timeline": "Regular checks are advisable to ensure ongoing eye health."
+    },
+    "parental_history_myopia": {
+      "risk_level": "moderate",
+      "cause": "A family history of myopia increases genetic predisposition to the condition.",
+      "future_consequences": "There is a moderate risk of developing myopia, influenced by genetic factors.",
+      "recommendations": "Regular eye exams and proactive lifestyle habits can help mitigate genetic risks.",
+      "timeline": "Consistent monitoring and intervention can provide benefits over time."
+    },
+    "summary": "1. High risk factors include axial length, spherical equivalent, and lifestyle elements like screen time and outdoor activity, which need immediate management to prevent myopia progression. 2. Moderate risk factors such as keratometry, cylinder, hydration, and parental history require consistent monitoring and lifestyle adjustments. 3. Low risk factors are stable but need preventive measures to sustain eye health. 4. Emphasize outdoor activities, limit screen time, and ensure adequate sleep and nutrition for overall improvement within 6–12 months."
+  }

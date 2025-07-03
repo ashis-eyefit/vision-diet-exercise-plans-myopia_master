@@ -1,0 +1,267 @@
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Ball Game",
+        "duration": "45 seconds",
+        "explanation": "Follow the bouncing ball with your eyes only, no head movement!",
+        "benefit": "Helps improve focus and reduce blurry vision",
+        "video_filename": "focus_training_game.mp4"
+      },
+      {
+        "name": "Blinking Bunny",
+        "duration": "50 seconds",
+        "explanation": "Blink rapidly like a bunny to refresh your eyes!",
+        "benefit": "Helps reduce frequent blinking and watery eyes by keeping them moist",
+        "video_filename": "blinking_game.mp4"
+      },
+      {
+        "name": "Palming Relaxation",
+        "duration": "45 seconds",
+        "explanation": "Cover your eyes with your palms and breathe deeply to relax.",
+        "benefit": "Provides general relaxation and soothes tired eyes",
+        "video_filename": "palming_relaxation.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Carrot dosa",
+          "Mango smoothie"
+        ],
+        "portion_size": "1 carrot dosa (≈150g), 200 ml mango smoothie",
+        "benefit": "Supports healthy eye function and reduces strain",
+        "nutrients": {
+          "Vitamin A": "350 µg - 👁️ Good for clear vision",
+          "Beta-Carotene": "2.5 mg - 🥕 Converts to Vitamin A for eye health"
+        },
+        "calorie_information": "Carrot dosa ≈ 180 kcal, Mango smoothie ≈ 130 kcal. Total ≈ 310 kcal",
+        "image_prompt": "A traditional Indian plate with a carrot dosa and a glass of mango smoothie, set in a bright kitchen"
+      },
+      "lunch": {
+        "food": [
+          "Palak paneer",
+          "Jeera rice"
+        ],
+        "portion_size": "1 medium bowl palak paneer (≈200g), 1 cup jeera rice (≈150g)",
+        "benefit": "Strengthens the retina and protects eyes from light damage",
+        "nutrients": {
+          "Lutein": "2 mg - 🌿 Protects eyes from light damage",
+          "Vitamin C": "40 mg - 🍊 Keeps eyes healthy"
+        },
+        "calorie_information": "Palak paneer ≈ 300 kcal, Jeera rice ≈ 200 kcal. Total ≈ 500 kcal",
+        "image_prompt": "A vibrant Indian lunch plate with palak paneer and jeera rice, in a colorful setting"
+      },
+      "snack": {
+        "food": [
+          "Almonds",
+          "Apple slices"
+        ],
+        "portion_size": "10 almonds (≈15g), 1 small apple (≈100g)",
+        "benefit": "Helps maintain eye health and energy levels",
+        "nutrients": {
+          "Vitamin E": "3 mg - 🥜 Protects eyes from damage",
+          "Fiber": "4 g - 🍏 Good for overall health"
+        },
+        "calorie_information": "Almonds ≈ 100 kcal, Apple slices ≈ 52 kcal. Total ≈ 152 kcal",
+        "image_prompt": "A small bowl of almonds and apple slices, arranged in a playful pattern"
+      },
+      "dinner": {
+        "food": [
+          "Vegetable khichdi",
+          "Cucumber raita"
+        ],
+        "portion_size": "1 medium bowl vegetable khichdi (≈250g), 1 small cup cucumber raita (≈100g)",
+        "benefit": "Provides essential nutrients and keeps the eyes hydrated",
+        "nutrients": {
+          "Zinc": "1.5 mg - 🥒 Supports eye health",
+          "Vitamin B6": "0.4 mg - 🍚 Important for eye function"
+        },
+        "calorie_information": "Vegetable khichdi ≈ 300 kcal, Cucumber raita ≈ 60 kcal. Total ≈ 360 kcal",
+        "image_prompt": "A comforting bowl of vegetable khichdi and cucumber raita in a cozy dinner setting"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Try doing 20-20-20 breaks together during screen time"
+  }
+}
+----------------------------------------------------------------------------------------
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Switch Game",
+        "duration": "45 seconds",
+        "explanation": "Switch your focus between your thumb and a distant object.",
+        "benefit": "Helps with blurry vision by improving focus skills",
+        "video_filename": "focus_switch_objects.mp4"
+      },
+      {
+        "name": "Blinking Bunny Game",
+        "duration": "45 seconds",
+        "explanation": "Blink rapidly like a bunny to keep your eyes moist.",
+        "benefit": "Reduces frequent blinking by keeping eyes lubricated",
+        "video_filename": "blinking_game.mp4"
+      },
+      {
+        "name": "Waterfall Eye Soothing",
+        "duration": "45 seconds",
+        "explanation": "Imagine a gentle waterfall washing over your eyes.",
+        "benefit": "Relieves watery eyes by promoting relaxation"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Carrot and beetroot smoothie"
+        ],
+        "portion_size": "200 ml",
+        "benefit": "Boosts eye health with essential vitamins",
+        "calorie_information": "200 ml smoothie ≈ 150 kcal",
+        "nutrients": {
+          "Vitamin A": "400 µg - 👁️ Supports retina health",
+          "Beta-Carotene": "5 mg - 🥕 Promotes good vision"
+        },
+        "image_prompt": "A vibrant carrot and beetroot smoothie in a child-friendly cup, with a colorful straw, on a bright kitchen counter"
+      },
+      "lunch": {
+        "food": [
+          "Palak paneer",
+          "Rice"
+        ],
+        "portion_size": "1 bowl palak paneer (≈150g), ½ cup cooked rice (≈100g)",
+        "benefit": "Supports overall eye health and reduces inflammation",
+        "calorie_information": "Palak paneer (≈150g) ≈ 250 kcal, Rice (≈100g) ≈ 130 kcal — Total ≈ 380 kcal",
+        "nutrients": {
+          "Lutein": "2 mg - 🌿 Filters harmful blue light",
+          "Calcium": "100 mg - 🦴 Supports eye structure"
+        },
+        "image_prompt": "A traditional plate with palak paneer and rice, child-friendly setting, bright lighting"
+      },
+      "snack": {
+        "food": [
+          "Handful of almonds"
+        ],
+        "portion_size": "10 almonds",
+        "benefit": "Provides essential fatty acids for eye moisture",
+        "calorie_information": "10 almonds ≈ 70 kcal",
+        "nutrients": {
+          "Vitamin E": "3 mg - 🌰 Protects cells in your eyes",
+          "Omega-3": "2 mg - 🐟 Keeps eyes hydrated"
+        },
+        "image_prompt": "A small bowl with a handful of almonds on a colorful napkin, playful kitchen backdrop"
+      },
+      "dinner": {
+        "food": [
+          "Vegetable pulao",
+          "Raita"
+        ],
+        "portion_size": "1 bowl vegetable pulao (≈150g), 1 small bowl raita (≈100g)",
+        "benefit": "Supports vision with a balance of vitamins and minerals",
+        "calorie_information": "Vegetable pulao (≈150g) ≈ 300 kcal, Raita (≈100g) ≈ 50 kcal — Total ≈ 350 kcal",
+        "nutrients": {
+          "Vitamin B": "1 mg - 🍚 Supports overall eye health",
+          "Zinc": "2 mg - 🥄 Helps in nutrient absorption"
+        },
+        "image_prompt": "A colorful Indian-style plate with vegetable pulao and raita, set in a warm, child-friendly dining area"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Encourage your child to follow the 20-20-20 rule to reduce eye strain during screen time."
+  }
+
+  
+--------------------------------------------------------------------------
+
+using automatic profile generator:
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Training Game",
+        "duration": "45 seconds",
+        "explanation": "Try to focus on different objects from near to far without moving your head.",
+        "benefit": "Helps improve focus and reduce blurry vision.",
+        "video_filename": "focus_training_game.mp4"
+      },
+      {
+        "name": "Eye Strain Relief",
+        "duration": "45 seconds",
+        "explanation": "Close your eyes gently, then open them wide. Repeat to relax your eye muscles.",
+        "benefit": "Reduces eye strain and provides relaxation.",
+        "video_filename": "eye_strain_relief.mp4"
+      },
+      {
+        "name": "Tracking Movement Exercise",
+        "duration": "45 seconds",
+        "explanation": "Follow a moving finger or pen with your eyes, making sure they move smoothly.",
+        "benefit": "Improves smooth tracking and helps with astigmatism.",
+        "video_filename": "tracking_movement_exercise.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Carrot porridge",
+          "A small banana"
+        ],
+        "portion_size": "Carrot porridge (≈150g), 1 small banana",
+        "benefit": "Supports eye health by providing essential vitamins.",
+        "nutrients": {
+          "Vitamin A": "450 µg - 👁️ Supports eye health",
+          "Potassium": "350 mg - 🍌 Helps maintain eye pressure"
+        },
+        "calorie_information": "Carrot porridge (≈150g) ≈ 120 kcal, 1 small banana ≈ 90 kcal — Total ≈ 210 kcal",
+        "image_prompt": "A bowl of carrot porridge with a small banana on the side in a child-friendly setting"
+      },
+      "lunch": {
+        "food": [
+          "Dal with spinach",
+          "Roti"
+        ],
+        "portion_size": "1 bowl dal with spinach (≈150g), 1 medium roti",
+        "benefit": "Provides nutrients that support retina function.",
+        "nutrients": {
+          "Iron": "2 mg - 🌿 Boosts blood flow to eyes",
+          "Folate": "80 µg - 🍃 Supports overall eye health"
+        },
+        "calorie_information": "Dal with spinach (≈150g) ≈ 180 kcal, 1 medium roti ≈ 70 kcal — Total ≈ 250 kcal",
+        "image_prompt": "A bowl of dal with spinach alongside a roti on a colorful plate"
+      },
+      "snack": {
+        "food": [
+          "Handful of almonds"
+        ],
+        "portion_size": "10 almonds",
+        "benefit": "Helps protect eyes from damage.",
+        "nutrients": {
+          "Vitamin E": "7 mg - 🥜 Protects eyes from free radicals"
+        },
+        "calorie_information": "10 almonds ≈ 70 kcal",
+        "image_prompt": "A small bowl of almonds on a child-friendly table"
+      },
+      "dinner": {
+        "food": [
+          "Vegetable pulao",
+          "Cucumber raita"
+        ],
+        "portion_size": "1 bowl vegetable pulao (≈200g), 1 small bowl cucumber raita",
+        "benefit": "Provides a mix of nutrients beneficial for eye health.",
+        "nutrients": {
+          "Beta-Carotene": "3 mg - 🥕 Converted to Vitamin A for vision",
+          "Calcium": "100 mg - 🥒 Supports eye muscle function"
+        },
+        "calorie_information": "Vegetable pulao (≈200g) ≈ 250 kcal, Cucumber raita (≈100g) ≈ 60 kcal — Total ≈ 310 kcal",  
+        "image_prompt": "A bowl of colorful vegetable pulao with cucumber raita on the side"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Encourage frequent breaks by using the 20-20-20 rule together during screen time."
+  }
+}

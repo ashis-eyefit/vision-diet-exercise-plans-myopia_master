@@ -1,0 +1,425 @@
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Ball Game",
+        "duration": "2 minutes",
+        "explanation": "Follow the bouncing ball with your eyes only, no head movement!",
+        "benefit": "Improves focus and eye muscle control",
+        "video_filename": "focus_training_game.mp4"
+      },
+      {
+        "name": "Palming Relaxation",
+        "duration": "2 minutes",
+        "explanation": "Rub your hands together and place them over your closed eyes, imagining a peaceful scene.",
+        "benefit": "Relaxes eye muscles and reduces strain",
+        "video_filename": "palming_relaxation.mp4"
+      },
+      {
+        "name": "Tracking Movement Exercise",
+        "duration": "2 minutes",
+        "explanation": "Move your finger in different directions and follow it only with your eyes.",
+        "benefit": "Helps with tracking and astigmatism",
+        "video_filename": "tracking_movement_exercise.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Banana pancakes",
+          "Blueberry smoothie"
+        ],
+        "benefit": "Boosts energy and eye health",
+        "nutrients": {
+          "Vitamin C": "10 mg - 🍊 Boosts eye health",
+          "Antioxidants": "2 mg - 🛡️ Protects eye cells"
+        },
+        "image_prompt": "A stack of banana pancakes with a glass of blueberry smoothie, bright sunny kitchen setting"      
+      },
+      "lunch": {
+        "food": [
+          "Grilled chicken wrap",
+          "Carrot sticks"
+        ],
+        "benefit": "Helps you see like an eagle!",
+        "nutrients": {
+          "Vitamin A": "835 IU - 👁️ Supports retina",
+          "Beta-carotene": "5 mg - 🥕 Sharpens vision"
+        },
+        "image_prompt": "A colorful grilled chicken wrap with fresh carrot sticks on a plate, child-friendly setting"      
+      },
+      "snack": {
+        "food": [
+          "Apple slices",
+          "Cheese cubes"
+        ],
+        "benefit": "Keeps your eyes strong and healthy",
+        "nutrients": {
+          "Calcium": "200 mg - 🦴 Supports healthy vision",
+          "Fiber": "2.5 g - 🍏 Aids overall health"
+        },
+        "image_prompt": "A fun plate with apple slices and cheese cubes, bright and playful table setting"
+      },
+      "dinner": {
+        "food": [
+          "Salmon",
+          "Broccoli"
+        ],
+        "benefit": "Feeds your eyes with superpowers!",
+        "nutrients": {
+          "Omega-3": "1.8 g - 🐟 Keeps eyes lubricated",
+          "Lutein": "1 mg - 🌿 Filters harmful light"
+        },
+        "image_prompt": "A delicious plate with grilled salmon and steamed broccoli, cozy dinner table"
+      }
+    },
+    "hydration_tip": "Create a sticker chart for every glass of water you drink today!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Model 20-20-20 breaks by doing them together during TV time."
+  }
+}
+
+-------------------------------------------------------------
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Blurry Vision Focus Game",
+        "duration": "3 minutes",
+        "explanation": "Switch your focus between a near object and a far object to train your eyes.",
+        "benefit": "Helps with blurry vision by improving focus",
+        "video_filename": "focus_training_game.mp4"
+      },
+      {
+        "name": "Eye Strain Relief Palming",
+        "duration": "3 minutes",
+        "explanation": "Rub your hands together and place them gently over your closed eyes to relax.",
+        "benefit": "Relieves eye strain and relaxes eye muscles",
+        "video_filename": "eye_strain_relief.mp4"
+      },
+      {
+        "name": "Astigmatism Tracking Exercise",
+        "duration": "2 minutes",
+        "explanation": "Follow a moving object with your eyes to help improve tracking.",
+        "benefit": "Improves eye tracking and aids in astigmatism",
+        "video_filename": "tracking_movement_exercise.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Blueberry pancakes",
+          "Greek yogurt"
+        ],
+        "benefit": "Boosts eye health with antioxidants",
+        "nutrients": {
+          "Vitamin C": "12 mg - 🍊 Supports eye tissue",
+          "Anthocyanins": "9 mg - 🍇 Protects from damage"
+        },
+        "image_prompt": "Stack of blueberry pancakes with a dollop of Greek yogurt, served on a bright, colorful plate in a child-friendly setting"
+      },
+      "lunch": {
+        "food": [
+          "Grilled chicken salad",
+          "Avocado slices"
+        ],
+        "benefit": "Feeds your eyes with vitamins and good fats",
+        "nutrients": {
+          "Vitamin E": "2.4 mg - 🥑 Protects cells",
+          "Lutein": "1 mg - 🌿 Filters blue light"
+        },
+        "image_prompt": "A vibrant salad with grilled chicken and avocado slices, served in a bright, inviting kitchen setting"
+      },
+      "snack": {
+        "food": [
+          "Carrot sticks",
+          "Hummus dip"
+        ],
+        "benefit": "Crunchy fun that helps your vision!",
+        "nutrients": {
+          "Beta-Carotene": "8285 µg - 🥕 Converts to Vitamin A",
+          "Protein": "7.9 g - 🌱 Builds tissue"
+        },
+        "image_prompt": "A plate of carrot sticks with a small bowl of hummus in a colorful, playful setting"
+      },
+      "dinner": {
+        "food": [
+          "Salmon fillet",
+          "Steamed broccoli"
+        ],
+        "benefit": "Keeps your eyes sharp and strong at night",
+        "nutrients": {
+          "Omega-3": "2.3 g - 🐟 Supports eye health",
+          "Vitamin K": "101.6 µg - 🥦 Aids in eye structure"
+        },
+        "image_prompt": "A beautifully cooked salmon fillet with steamed broccoli, served in a bright, cozy kitchen environment"
+      }
+    },
+    "hydration_tip": "Attach a sticker for every glass of water you drink today!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Model 20-20-20 breaks by doing them together during TV time."
+  }
+}
+
+----------------------------------------------------------------------------
+
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Switch with Pen",
+        "duration": "45 seconds",
+        "explanation": "Hold a pen at arm's length and focus on it, then switch focus to an object 20 feet away.",
+        "benefit": "Helps improve focus and reduces blurry vision.",
+        "video_filename": "focus_switch_objects.mp4"
+      },
+      {
+        "name": "Palming Relaxation",
+        "duration": "45 seconds",
+        "explanation": "Gently cover your closed eyes with your palms and relax.",
+        "benefit": "Provides general relaxation and reduces eye strain.",
+        "video_filename": "palming_relaxation.mp4"
+      },
+      {
+        "name": "Astigmatism Tracking",
+        "duration": "45 seconds",
+        "explanation": "Track a moving object horizontally and vertically without moving your head.",
+        "benefit": "Helps improve astigmatism by enhancing eye tracking abilities.",
+        "video_filename": "tracking_movement_exercise.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Oatmeal with almonds",
+          "Banana smoothie"
+        ],
+        "portion_size": "1 small bowl and 1 glass",
+        "benefit": "Provides essential nutrients for eye health and energy for the day.",
+        "nutrients": {
+          "Vitamin E": "1.5 mg - 🌿 Protects eye cells from damage",
+          "Potassium": "450 mg - 🍌 Supports healthy nerve function"
+        },
+        "image_prompt": "A small bowl of oatmeal garnished with almonds and a glass of banana smoothie on a colorful child-friendly breakfast table"
+      },
+      "lunch": {
+        "food": [
+          "Dal tadka",
+          "Brown rice"
+        ],
+        "portion_size": "1 small bowl of dal and ½ cup rice",
+        "benefit": "Rich in proteins and vitamins to support overall eye health.",
+        "nutrients": {
+          "Protein": "5 g - 💪 Helps maintain eye tissue",
+          "Vitamin B6": "0.3 mg - 📘 Supports proper eye function"
+        },
+        "image_prompt": "A small bowl of dal tadka served with brown rice on a vibrant kid-friendly Indian lunch plate"    
+      },
+      "snack": {
+        "food": [
+          "Carrot sticks",
+          "Hummus"
+        ],
+        "portion_size": "½ cup carrot sticks and 2 tbsp hummus",
+        "benefit": "Boosts vision with vitamin-rich carrots.",
+        "nutrients": {
+          "Vitamin A": "835 IU - 👁️ Supports retina health",
+          "Fiber": "3 g - 🌱 Aids in digestion"
+        },
+        "image_prompt": "A plate of carrot sticks with a small bowl of hummus in a playful setting ideal for a child's snack"
+      },
+      "dinner": {
+        "food": [
+          "Palak paneer",
+          "Whole wheat roti"
+        ],
+        "portion_size": "1 small bowl and 1 roti",
+        "benefit": "Strengthens vision by providing iron and vitamin A.",
+        "nutrients": {
+          "Iron": "3 mg - 💪 Supports healthy blood flow to eyes",
+          "Calcium": "150 mg - 🦴 Maintains eye health"
+        },
+        "image_prompt": "A small bowl of palak paneer with a whole wheat roti on a colorful, child-friendly dinner plate, Indian kitchen setting"
+      }
+    },
+    "hydration_tip": "Use a superhero-themed bottle to remind yourself to drink water every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Encourage your child to take screen breaks together to model healthy habits."
+  }
+}
+-----------------------------------------------------------------------
+
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Ball Game",
+        "duration": "45 seconds",
+        "explanation": "Follow the bouncing ball with your eyes only, no head movement!",
+        "benefit": "Improves focus and eye muscle control",
+        "video_filename": "focus_training_game.mp4"
+      },
+      {
+        "name": "Gentle Eye Massage",
+        "duration": "45 seconds",
+        "explanation": "Gently massage around your eyes with your fingertips in circular motions.",
+        "benefit": "Relieves eye strain and promotes relaxation"
+      },
+      {
+        "name": "Blinking Game",
+        "duration": "45 seconds",
+        "explanation": "See how many times you can blink in 45 seconds!",
+        "benefit": "Helps keep your eyes moist and reduces dryness",
+        "video_filename": "blinking_game.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Carrot and beetroot smoothie",
+          "Almonds"
+        ],
+        "portion_size": "150 ml smoothie and 5 almonds",
+        "benefit": "Boosts vision health and reduces light sensitivity",
+        "nutrients": {
+          "Beta-Carotene": "500 µg - 🥕 Enhances vision clarity",
+          "Vitamin E": "2 mg - 🌿 Protects eye cells"
+        },
+        "image_prompt": "A tall glass of carrot and beetroot smoothie with a small bowl of almonds on a bright kitchen counter"
+      },
+      "lunch": {
+        "food": [
+          "Palak paneer",
+          "Brown rice"
+        ],
+        "portion_size": "½ cup palak paneer and ½ cup brown rice",
+        "benefit": "Supports retina health and overall eye function",
+        "nutrients": {
+          "Vitamin A": "750 IU - 👁️ Supports retina health",
+          "Lutein": "3 mg - 🌿 Filters harmful blue light"
+        },
+        "image_prompt": "A colorful plate with palak paneer and brown rice in an Indian style, child-friendly setting"     
+      },
+      "snack": {
+        "food": [
+          "Guava slices"
+        ],
+        "portion_size": "1 small guava",
+        "benefit": "Enhances eye health with vitamin C",
+        "nutrients": {
+          "Vitamin C": "125 mg - 🌞 Supports eye health",
+          "Fiber": "3 g - 📏 Aids digestion"
+        },
+        "image_prompt": "A plate of fresh guava slices with a sprinkle of chaat masala in a sunny kitchen"
+      },
+      "dinner": {
+        "food": [
+          "Dal tadka",
+          "Chapati"
+        ],
+        "portion_size": "1 bowl dal tadka and 1 chapati",
+        "benefit": "Provides essential nutrients for maintaining healthy vision",
+        "nutrients": {
+          "Protein": "6 g - 💪 Supports muscle health",
+          "Iron": "2 mg - 🌱 Essential for healthy blood flow to the eyes"
+        },
+        "image_prompt": "A warm bowl of dal tadka with a chapati on a traditional Indian dining table"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Encourage your child to spend some time outdoors in natural light to support healthy vision."
+  }
+}
+
+--------------------------------------------------------------------------------
+
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Switch with Objects",
+        "duration": "45 seconds",
+        "explanation": "Alternate focus between a near object and a far object using your eyes only.",
+        "benefit": "Improves focus and reduces blurry vision",
+        "video_filename": "focus_switch_objects.mp4"
+      },
+      {
+        "name": "Palming Relaxation",
+        "duration": "45 seconds",
+        "explanation": "Cover your closed eyes gently with your palms and relax.",
+        "benefit": "Provides general relaxation and relieves light sensitivity",
+        "video_filename": "palming_relaxation.mp4"
+      },
+      {
+        "name": "Blinking Game",
+        "duration": "45 seconds",
+        "explanation": "Blink rapidly for a few seconds, then slow down. Repeat this pattern.",
+        "benefit": "Helps reduce frequent eye rubbing and dryness",
+        "video_filename": "blinking_game.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Carrot dosa",
+          "Mango slices"
+        ],
+        "portion_size": "2 medium carrot dosas, 100g mango slices",
+        "benefit": "Supports retina health and filters blue light",
+        "nutrients": {
+          "Vitamin A": "600 µg - 👁️ Supports retina health",
+          "Lutein": "1 mg - 🌿 Filters harmful blue light"
+        },
+        "image_prompt": "A plate with two carrot dosas and a side of mango slices in a colorful, child-friendly setting"   
+      },
+      "lunch": {
+        "food": [
+          "Palak paneer",
+          "Brown rice"
+        ],
+        "portion_size": "1 bowl palak paneer (≈150g), 100g cooked brown rice",
+        "benefit": "Strengthens vision and maintains eye health",
+        "nutrients": {
+          "Iron": "2 mg - 💪 Boosts blood circulation to the eyes",
+          "Vitamin C": "20 mg - 🍊 Enhances absorption of iron"
+        },
+        "image_prompt": "A vibrant Indian-style plate with palak paneer and brown rice served in a child-friendly kitchen" 
+      },
+      "snack": {
+        "food": [
+          "Almonds",
+          "Apple slices"
+        ],
+        "portion_size": "10 almonds, 1 medium apple",
+        "benefit": "Promotes eye health and provides antioxidants",
+        "nutrients": {
+          "Vitamin E": "3 mg - 🛡️ Protects eyes from damage",
+          "Zinc": "1 mg - ⚙️ Supports retina function"
+        },
+        "image_prompt": "A small bowl with almonds and apple slices on a cheerful, kid-friendly table"
+      },
+      "dinner": {
+        "food": [
+          "Lentil soup",
+          "Whole wheat chapati"
+        ],
+        "portion_size": "1 bowl lentil soup (≈150ml), 1 whole wheat chapati",
+        "benefit": "Provides protein and promotes overall eye health",
+        "nutrients": {
+          "Protein": "5 g - 🏗️ Builds and repairs eye tissue",
+          "Folate": "50 µg - 🌱 Aids in cell growth and eye health"
+        },
+        "image_prompt": "A warm bowl of lentil soup with a whole wheat chapati in a cozy, child-friendly setting"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Encourage your child to follow the 20-20-20 rule together during screen time."
+  }
+}

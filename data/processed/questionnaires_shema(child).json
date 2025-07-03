@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Eye Health Questionnaire",
+  "description": "Form to collect initial and ongoing eye health data to drive personalized AI outputs.",
+  "type": "object",
+  "properties": {
+    "symptoms": {
+        "type": "array",
+        "title": "What eye-related symptoms does your child currently experience?",
+        "description": "Select all that apply based on your current observations.",
+        "items": {
+          "type": "string",
+          "enum": [
+            "blurry vision (especially in the evening)",
+            "eye strain after screen use",
+            "dry eyes",
+            "red eyes",
+            "frequent blinking",
+            "difficulty focusing on near objects",
+            "watery eyes",
+            "sensitivity to light",
+            "frequent eye rubbing",
+            "double vision",
+            "headaches after reading or screen time",
+            "eye pain or discomfort",
+            "difficulty tracking moving objects",
+            "squinting often",
+            "Other (Please write the symptom):"
+          ]
+        },
+        "uniqueItems": true,
+        "minItems": 0
+      },
+    "lifestyle": {
+      "type": "object",
+      "title": "Lifestyle",
+      "properties": {
+        "sleepHours": {
+          "type": "number",
+          "title": "How many hours does your child sleep per night?",
+          "minimum": 0,
+          "maximum": 24,
+          "default": 7
+        },
+        "bedTime": {
+            "type":"string",
+            "title": "When does your child usually go to bed?",
+            "enum": ["Before 9 PM", "9 PM - 10:30 PM", "10:30 PM - 12 PM", "After 12 PM"],
+            "default": "10 PM"
+        },
+        "usualDietType": {
+          "type": "string",
+          "title": "What is your usual dietary type (That best describes your regular food habits.)?",
+          "enum": [
+            "Vegetarian",
+            "Non-Vegetarian",
+            "Eggetarian",
+            "Vegan",
+            "Jain"
+          ]
+        },
+         "dietQuality": {
+          "type": "string",
+          "title": "How would you describe the overall quality of the child's diet?",
+          "enum": ["Good", "Moderate", "Poor"]
+          },
+        "hydrationFrequency": {
+          "type": "string",
+          "title": "How often does your child stay hydrated?",
+          "enum": ["Rarely", "Occasionally", "Regularly", "Very Frequently"],
+          "default": "Regularly"
+        },
+        "screenBrightness": {
+            "type":"string",
+            "title": "What is the level screen brightness that your child usually prefers?",
+            "enum": ["low", "medium", "high"],
+            "default": "medium"
+        }
+      },
+      "required": ["sleepHours", "bedTime", "usualDietType", "dietQuality",  "hydrationFrequency",  "screenBrightness"]
+    },
+    "medicalHistory": {
+      "type": "object",
+      "title": "Medical History",
+      "properties": {
+        "diagnosedConditions": {
+          "type": "array",
+          "title": "Any diagnosed conditions of your child?",
+          "items": {
+            "type": "string",
+            "enum": [
+                "❌ None",
+                "👓 Myopia (Near-sightedness)",
+                "🔭 Hyperopia (Far-sightedness)",
+                "📐 Astigmatism (Blurred/distorted vision)",
+                "👀 Strabismus (Crossed eyes)",
+                "😴 Amblyopia (Lazy eye)",
+                "😕 Ptosis (Drooping eyelid)",
+                "👶☁️ Cataract",
+                "👶💧 Glaucoma",
+                "🔁 Nystagmus (Involuntary eye movement)",
+                "🌈❌ Colour Vision Deficiency (Trouble seeing certain colors)",
+                "👶🩺 Retinopathy of Prematurity (Retinal issues in premature babies)",
+                "🤧 Allergic Conjunctivitis (Eye allergy/redness/itching)",
+                "💻😫 Digital Eye Strain / Screen-Related Fatigue",
+                "✍️ Other (Please write the dinosed conditions):"
+              ],
+              "default":"None"
+          },
+          "uniqueItems": true
+        },
+        "currentMedications": {
+          "type": "string",
+          "title": "Any medications your child currently takes?",
+          "default": ""
+        }
+      },
+      "required": ["diagnosedConditions","currentMedications"]
+    },
+    "familyHistory":{
+        "type":"object",
+        "title": "Parents History",
+        "properties": {
+            "parentsDiagnossedCondition":{
+                "type":"array",
+                "title": "Any parents' diagnosed conditions?",
+                "items": {
+                    "type":"string",
+                    "enum": ["None","Myopia", "Hypermetropia", "Astigmatism", "Any known congenital eye diseases", "Colour blindness", "Other"],
+                    "default": "None"
+                },
+                
+                "uniqueItems": true
+            }
+        },
+        "required": ["parentsDiagnossedCondition"]
+    }
+  },
+  "required": ["symptoms", "lifestyle", "medicalHistory","familyHistory"]
+}

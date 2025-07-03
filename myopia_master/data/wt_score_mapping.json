@@ -1,0 +1,87 @@
+{
+  "axial_length_left": {
+    "weightage": 2.0,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "axial_length_right": {
+    "weightage": 2.0,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "spherical_eq_left": {
+    "weightage": 1.5,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "spherical_eq_right": {
+    "weightage": 1.5,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "keratometry_left": {
+    "weightage": 2.0,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "keratometry_right": {
+    "weightage": 2.0,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "cylinder_left": {
+    "weightage": 1.5,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "cylinder_right": {
+    "weightage": 1.5,
+    "score": { "high": 3, "moderate": 1.5, "low": 0.5 }
+  },
+  "al_percentile_left": {
+    "weightage": 2.0,
+    "score": { "high": 3, "elevated": 2.5, "moderate": 1.5, "low": 0.5 }
+  },
+  "al_percentile_right": {
+    "weightage": 2.0,
+    "score": { "high": 3, "elevated": 2.5, "moderate": 1.5, "low": 0.5 }
+  },
+  "daily_outdoor_time_hours": {
+    "weightage": 2.0,
+    "score": { "high": 2.5, "low": 0}
+  },
+  "screen_time_hours_per_day": {
+    "weightage": 2.0,
+    "score": { "high": 2.5, "low": 1}
+  },
+  "average_sleep_hours": {
+    "weightage": 1.5,
+    "score": { "high": 2.5, "moderate": 1.5, "low": 0.5 }
+  },
+  "room_lighting": {
+    "weightage": 1.0,
+    "score": { "Well-lit environment":0, "Dim lightning or screens in the dark": 2.5}
+  },
+  "hydration_level": {
+    "weightage": 0.5,
+    "score": {
+    "good": 0,
+    "moderate": 1.5,
+    "poor": 2.5
+  }
+  },
+  "diet_quality": {
+    "weightage": 1.0,
+    "score": {
+    "good": 0,
+    "moderate": 1.5,
+    "poor": 2.5
+  }
+  },
+  "common_symptoms": {
+    "weightage": 1.5,
+    "score": {
+    "none": 0,
+    "one_symptom": 0.5,
+    "two_symptom":1.5,
+    "three_or_more": 2.5
+  }
+  },
+  "parental_history_myopia": {
+    "weightage": 2.0,
+    "score":{ "Yes": 2.5, "No": 0 }
+  }
+}

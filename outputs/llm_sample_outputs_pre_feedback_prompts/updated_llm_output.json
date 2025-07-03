@@ -1,0 +1,85 @@
+{
+  "day_1_content": {
+    "day": 1,
+    "exercises": [
+      {
+        "name": "Focus Switch with Objects",
+        "duration": "45 seconds",
+        "explanation": "Alternate focus between a near object and a far object using your eyes only.",
+        "benefit": "Improves focus and reduces blurry vision",
+        "video_filename": "focus_switch_objects.mp4"
+      },
+      {
+        "name": "Palming Relaxation",
+        "duration": "45 seconds",
+        "explanation": "Cover your closed eyes gently with your palms and relax.",
+        "benefit": "Provides general relaxation and relieves light sensitivity",
+        "video_filename": "palming_relaxation.mp4"
+      },
+      {
+        "name": "Blinking Game",
+        "duration": "45 seconds",
+        "explanation": "Blink rapidly for a few seconds, then slow down. Repeat this pattern.",
+        "benefit": "Helps reduce frequent eye rubbing and dryness",
+        "video_filename": "blinking_game.mp4"
+      }
+    ],
+    "meals": {
+      "breakfast": {
+        "food": [
+          "Carrot dosa",
+          "Mango slices"
+        ],
+        "portion_size": "2 medium carrot dosas, 100g mango slices",
+        "benefit": "Supports retina health and filters blue light",
+        "nutrients": {
+          "Vitamin A": "600 µg - 👁️ Supports retina health",
+          "Lutein": "1 mg - 🌿 Filters harmful blue light"
+        },
+        "image_prompt": "A plate with two carrot dosas and a side of mango slices in a colorful, child-friendly setting"   
+      },
+      "lunch": {
+        "food": [
+          "Palak paneer",
+          "Brown rice"
+        ],
+        "portion_size": "1 bowl palak paneer (≈150g), 100g cooked brown rice",
+        "benefit": "Strengthens vision and maintains eye health",
+        "nutrients": {
+          "Iron": "2 mg - 💪 Boosts blood circulation to the eyes",
+          "Vitamin C": "20 mg - 🍊 Enhances absorption of iron"
+        },
+        "image_prompt": "A vibrant Indian-style plate with palak paneer and brown rice served in a child-friendly kitchen" 
+      },
+      "snack": {
+        "food": [
+          "Almonds",
+          "Apple slices"
+        ],
+        "portion_size": "10 almonds, 1 medium apple",
+        "benefit": "Promotes eye health and provides antioxidants",
+        "nutrients": {
+          "Vitamin E": "3 mg - 🛡️ Protects eyes from damage",
+          "Zinc": "1 mg - ⚙️ Supports retina function"
+        },
+        "image_prompt": "A small bowl with almonds and apple slices on a cheerful, kid-friendly table"
+      },
+      "dinner": {
+        "food": [
+          "Lentil soup",
+          "Whole wheat chapati"
+        ],
+        "portion_size": "1 bowl lentil soup (≈150ml), 1 whole wheat chapati",
+        "benefit": "Provides protein and promotes overall eye health",
+        "nutrients": {
+          "Protein": "5 g - 🏗️ Builds and repairs eye tissue",
+          "Folate": "50 µg - 🌱 Aids in cell growth and eye health"
+        },
+        "image_prompt": "A warm bowl of lentil soup with a whole wheat chapati in a cozy, child-friendly setting"
+      }
+    },
+    "hydration_tip": "Stick a cartoon sticker on your bottle and take 5 sips every hour!",
+    "child_message": "Your eyes are superheroes — let's train them like champions!",
+    "parent_nudge": "Encourage your child to follow the 20-20-20 rule together during screen time."
+  }
+}

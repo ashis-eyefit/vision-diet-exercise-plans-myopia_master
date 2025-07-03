@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Child Vision Plan - Parental Feedback Form",
+  "description": "Collects feedback from parents to improve the next 14-day personalized vision care plan for their child.",
+  "type": "object",
+  "properties": {
+    "symptom_improvement": {
+      "type": "string",
+      "title": "👁️ Was there any improvement in your child's eye-related symptoms?",
+      "enum": [
+        "✅ Yes, significantly",
+        "🙂 Yes, slightly",
+        "😐 No change",
+        "⚠️ Got worse",
+        "❓ Not sure"
+      ]
+    },
+    "exercise_frequency": {
+      "type": "string",
+      "title": "🧘 How often did your child follow the vision exercises?",
+      "enum": [
+        "📅 Daily",
+        "📆 3-4 times a week",
+        "🗓️ 1-2 times a week",
+        "🚫 Not at all"
+      ]
+    },
+    "hydration_consistency": {
+      "type": "string",
+      "title": "💧 Did your child drink enough water daily (e.g., 6–8 glasses)?",
+      "enum": [
+        "👍 Yes",
+        "😌 Sometimes",
+        "👎 No",
+        "❓ Not sure"
+      ]
+    },
+    "screen_breaks": {
+      "type": "string",
+      "title": "🖥️ Did your child take regular screen breaks?",
+      "enum": [
+        "✅ Yes, regularly",
+        "🔁 Occasionally",
+        "😕 Rarely",
+        "🚫 No"
+      ]
+    },
+    "next_focus_area": {
+      "type": "string",
+      "title": "🎯 Where do you feel the last plan was lacking or needs more focus?",
+      "enum": [
+        "🧘 More vision exercises/outdoor activities",
+        "🥗 Better diet/meal planning",
+        "💧 Improving hydration",
+        "⏸️ Taking screen breaks",
+        "🌙 Better sleep habits",
+        "🎉 Keeping child motivated"
+      ]
+    },
+    "new_symptoms_observed": {
+      "type": "string",
+      "title": "🆕 Have you noticed any new eye-related symptoms or dignosed conditions in your child?",
+      "enum": [
+        "❌ None",
+        "👓 Myopia (Near-sightedness)",
+        "🔭 Hyperopia (Far-sightedness)",
+        "📐 Astigmatism (Blurred/distorted vision)",
+        "👀 Strabismus (Crossed eyes)",
+        "😴 Amblyopia (Lazy eye)",
+        "😕 Ptosis (Drooping eyelid)",
+        "👶☁️ Cataract",
+        "👶💧 Glaucoma",
+        "🔁 Nystagmus (Involuntary eye movement)",
+        "🌈❌ Colour Vision Deficiency (Trouble seeing certain colors)",
+        "👶🩺 Retinopathy of Prematurity (Retinal issues in premature babies)",
+        "🤧 Allergic Conjunctivitis (Eye allergy/redness/itching/frequent eye rubbing)",
+        "💻😫 Digital Eye Strain / Screen-Related Fatigue / headaches after reading or screen time",
+        "👁️👁️⚡ Frequent blinking",
+        "👁️💧 Watery eyes",
+        "👁️🔥 eye pain or discomfort",
+        "🎯👁️ difficulty tracking moving objects",
+        "😑👀 squinting often",
+        "🌞👁️⚡ sensitivity to light",
+        "✍️ Other (Please write the new observed symptoms):"
+
+      ]
+    }
+  },
+  "if": {
+    "properties": {
+      "new_symptoms_observed": {
+        "const": "✍️ Other:"
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "other_symptom_text": {
+        "type": "string",
+        "title": "📝 Please specify the symptom"
+      }
+    },
+    "required": ["other_symptom_text"]
+  },
+  "required": [
+    "symptom_improvement",
+    "exercise_frequency",
+    "hydration_consistency",
+    "screen_breaks",
+    "next_focus_area",
+    "new_symptoms_observed"
+  ]
+}

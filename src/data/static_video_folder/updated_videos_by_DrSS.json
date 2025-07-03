@@ -1,0 +1,200 @@
+{"videos_name_filename_promts":[
+{
+  "Eye-Hand Coordination Game": "eye_hand_coordination_game.mp4",
+  "video_prompt": "Cartoon child plays a fun catch-the-ball game with parent in a garden, tracking and catching a bouncing colorful ball — showing exaggerated joyful eye tracking."
+},
+{
+  "Focus Training Ball Bouncing Game": "focus_training_game.mp4",
+  "video_prompt": "Animated child stares at a bouncing ball shifting distances, switching focus between ball and distant tree with superhero sparkles in the eyes each time focus shifts."
+},
+{
+  "Mirror Blink Race Exercise": "mirror_blink_game.mp4",
+  "video_prompt": "Child races cartoon self in mirror to blink fast with every time a bell sounds — boosts blink rate and eye moisture regulation."
+},
+{
+  "Eye Strain Relief Massage Exercise": "eye_strain_relief.mp4",
+  "video_prompt": "Playful animation of child gently massaging around their eyes with fingers in circular motion, while relaxing clouds and soft sparkles float around."
+},
+{
+  "Palming Relaxation Exercise": "palming_relaxation.mp4",?? mention time duration for keeping palms on eyes and removing [updated with time]
+  "video_prompt": "A cheerful cartoon child sits cross-legged on a mat in a softly lit room. The child rubs palms together to warm them (5 seconds), then gently places them over closed eyes (hold for 20 seconds). A peaceful forest background appears with sparkles around the eyes. The child then removes palms slowly and smiles (5 seconds). The cycle repeats once more. End with birds chirping and a friendly voice saying, 'Your eyes feel fresh and happy!'"
+},
+{
+  "Near-Far Focus Switch Exercise": "near_far_focus.mp4",
+  "video_prompt": "Animated child switches gaze between a pencil held in front and a tree outside the window — glowing focus beams show eyes adjusting between near and far objects."
+},
+{
+  "Astigmatism Tracking Movement Exercise": "tracking_movement_exercise.mp4", ??-  how can the child find a butterfly outside? replace with something more commonly and easily available [updated with colorful crayon/pencil]
+  "video_prompt": "A cartoon child holds a colorful crayon with a smiley face sticker on it. The child stretches out one arm and slowly moves the crayon horizontally and then vertically, keeping the head still and following the tip only with their eyes. A glowing trail shows the eye movement as it tracks the crayon's path. The background is bright and simple, with fun music. A cheerful voice reminds, 'Only move your eyes, not your head!' End with a wink and sparkle around the eyes."
+},
+{
+  "Sunlight Play Task Game": "sunlight_play_task.mp4",
+  "video_prompt": "Cartoon kids play tag and ball in a sunny park, eyes glowing as they move around in natural daylight — the sun winks happily as they laugh and play outdoors."
+},
+{
+  "Smooth Tracking Exercise": "smooth_tracking_exercise.mp4",
+  "video_prompt": "Animated child tracks a glowing balloon smoothly as it floats left to right, then up and down, with trail sparkles showing smooth eye movement, no jerks."
+},
+{
+  "Eye Muscle 8-Pattern Exercise": "eight_pattern_exercise.mp4",
+  "video_prompt": "Animated child traces a glowing number 8 in the air with their eyes, following it smoothly as it loops — sparkles show muscle movement paths."
+},
+{
+  "Saccadic Movement Training Exercise": "saccade_training_game.mp4",
+  "video_prompt": "Cartoon shows how to tape two colorful animal pictures or emojis on opposite walls — child stands in the middle and shifts gaze quickly left and right when they hear a sound or clap — builds saccadic eye movement through real-space cues."
+},
+{
+  "Peripheral Awareness Exercise": "peripheral_awareness_game.mp4",
+  "video_prompt": "A cartoon child notices and reaches for objects appearing from the edges of the screen, training peripheral vision with playful music and vibrant animations."
+},
+{
+  "Focus Switch Objects Exercise": "focus_switch_objects.mp4",
+  "video_prompt": "A lively child switches focus between a spinning top close by and a flying kite far away, highlighted with focus lines and cheerful background sounds."
+},
+{
+  "Myopia Control Walk Game": "myopia_control_walk.mp4",
+  "video_prompt": "A happy animated child takes a stroll outdoors, looking around at trees, flowers, and sky to encourage natural myopia control, with bright sunny environment and playful tunes."
+},
+{
+  "Clockwise Eye Roll Exercise": "clockwise_eye_roll.mp4",
+  "video_prompt": "A cheerful animated child rolls their eyes in a slow, circular clockwise motion, with guiding arrows and sparkles to make it fun and clear."
+},
+{
+  "Anti-Clockwise Eye Roll Exercise": "anticlockwise_eye_roll.mp4",
+  "video_prompt": "An animated child rolls their eyes in an anti-clockwise circle, with colorful directional arrows and light effects to guide the motion."
+},
+{
+  "Zoom Focus Exercise": "zoom_focus_exercise.mp4",
+  "video_prompt": "A cartoon child holds a toy and slowly brings it closer to their nose, eyes focusing in and out like a zoom lens, with sound effects and a magical sparkle trail."
+},
+{
+  "Pencil Pushup Focus Exercise": "pencil_pushup_exercise.mp4",
+  "video_prompt": "An animated child slowly moves a pencil from arm's length to nose tip, focusing their eyes all the way, with pop-up stars and playful background sounds."
+},
+{
+  "Blinking with Breathing Exercise": "blinking_breathing_relaxation.mp4",
+  "video_prompt": "A calm cartoon child takes deep breaths and blinks gently to soothing music, with soft clouds and animated heartbeats showing the rhythm."
+},
+{
+  "Diagonal Eye Tracking Exercise": "diagonal_tracking_exercise.mp4",
+  "video_prompt": "An animated child follows a star that moves diagonally across the screen, tracing its motion with just their eyes, on a vibrant night sky background."
+},
+{
+  "Thumb Near-Far Focus Exercise": "thumb_focus_shift.mp4",
+  "video_prompt": "A cartoon child focuses on their outstretched thumb, then switches gaze to a faraway tree, back and forth with fun ping sounds and smooth animation."
+},
+{
+  "Eye Stretch Up and Down Exercise": "eye_stretch_up_down.mp4",
+  "video_prompt": "A playful child moves their eyes up to a floating balloon and down to a toy on the ground, repeating with arrows and silly sound cues to keep it engaging."
+},
+{
+  "Spoon Tracking Challenge Exercise": "spoon_tracking_game.mp4",
+  "video_prompt": "Cartoon shows a parent holding a regular spoon with a colorful sticker at the tip. They move it in slow zigzag and circular paths at different distances while the child keeps their head still and tracks only with their eyes — gradually increasing speed builds smooth pursuit and focus control."
+},
+{
+  "Color Contrast Explorer Exercise": "color_contrast_explorer.mp4",
+  "video_prompt": "A cartoon child explores magical lands where animals hide in colorful scenes. Younger kids (ages 4-7) spot big, bright animals on high-contrast backgrounds, while older kids (8–15) find camouflaged creatures in trickier color blends — all guided by fun sounds and cheerful animations that improve color contrast sensitivity."
+},
+{
+  "Eye Shoulder Tag Exercise": "shoulder_tap_eyes.mp4",   ??- is this supposed to be done physically by the child? the child may require assistance, may not be possible [in one or two exercises, parents may be involved to guide. if it is very difficult the we can change it]
+  "video_prompt": "Animated character stands still while a floating cartoon hand taps its left and right shoulders alternately. The child is guided to track the hand with only their eyes (no head movement). Each tap has a fun sound. Voiceover says: 'Eyes only — tap left, tap right!' Helps train horizontal eye movement and visual tracking."
+},
+{
+  "Fan Blade Zoom Focus Exercise": "fan_blade_focus.mp4",
+  "video_prompt": "Child switches focus between near toy and slowly spinning fan overhead — builds accommodation flexibility."
+},
+{
+  "Mirror Eye Movement Mimic Exercise": "mirror_eye_mimic.mp4",
+  "video_prompt": "A cartoon child copies the eye movements of a mirror character — up, down, side to side — in a fun, mimic-the-face challenge."
+},
+{
+  "Vertical Line Chase Exercise": "vertical_chase_game.mp4", ??- is this an on screen exercise? [updated with off-screen setup]
+  "video_prompt": "A cartoon child holds a string with a small bead or colorful toy hanging from it. The child raises the string slowly above eye level and then lowers it slowly to below the chin, keeping the head still while following the object only with their eyes. The background shows playful floating shapes. A glowing trail follows the eyes as they smoothly track the object up and down. A friendly voice says, 'Keep your head still — just use your eyes!' End with the child giving a thumbs-up."
+},
+{
+  "Snack Time Color Hunt Game": "color_snack_focus.mp4",
+  "video_prompt": "Child sorts colorful snacks or fruit into dishes by color, following animation prompts — enhances color vision and sorting saccades."
+},
+{
+  "Shape Recognition Blink Task Exercise": "shape_blink_game.mp4",
+  "video_prompt": "Child blinks to ‘select’ the correct shape shown on screen in a fast-paced recognition game — encourages blinking and visual processing together."
+},
+{
+  "Shadow Chase Peripheral Exercise": "shadow_chase_peripheral.mp4",
+  "video_prompt": "A cartoon child tries to tap glowing shadows that appear suddenly from the edges of the screen, training fast peripheral reaction in a fun jungle scene."
+},
+{
+  "Spiral Spin Exercise": "spiral_spin.mp4",     ??- too many up down gaze exercises [updated with off-screen spiral spin tracking]
+  "video_prompt": "A cartoon child places a long colorful shoelace or rope on the floor in a spiral shape, like a cinnamon roll. The child lies on their tummy with chin resting on hands and slowly follows the spiral shape from the outside toward the center using only their eyes — head stays still. As their eyes move inward, sparkles trace the spiral path. The rope makes silly 'whoosh' and 'zip' sounds, and a voice says, 'Follow the silly rope with just your eyes!' At the center, a tiny cartoon snail waves hello, and the child giggles. End with a rainbow sparkle burst."
+},
+{
+  "Fruit Toss Distance Drill Exercise": "fruit_toss_focus.mp4",
+  "video_prompt": "Cartoon caregiver gently tosses fruits from a distance while child catches — trains convergence/divergence and eye-hand coordination."
+},
+{
+  "Water Bottle Tracking Exercise": "water_bottle_track.mp4",
+  "video_prompt": "Child rolls a bottle slowly across a table and follows it with their eyes — encourages object-based eye tracking indoors."
+},
+{
+  "Late Afternoon Skyline Horizon Distant Tree Blink Game": "late_afternoon_skyline_blink_relax.mp4", ?? instruct properly to go out and try to look at something far away [updated with proper instruction and robust prompt]
+  "video_prompt": "A cartoon child steps outside during late afternoon and looks far into the distance — at a tree, building, or skyline on the horizon. The child stands still, keeps their head relaxed, and blinks slowly and gently every few seconds while gazing at the faraway scene. Peaceful birds fly by as the background shows a soft sunset glow. Sparkles appear with each blink to show calm eye refreshment. A gentle voice says, 'Look far, blink soft — give your eyes a mini vacation!' End with the child smiling and the words, 'Far looking makes eyes happy!'"
+},
+{
+  "Toy Hunt Peripheral Exercise": "toy_peripheral_spotting.mp4",
+  "video_prompt": "Animated voiceover encourages the child to stand still and look straight ahead while a family member quietly places or moves toys at the edges of their vision. The child must guess or point using only peripheral vision — no head turns. Emphasizes real-life peripheral awareness, family interaction, and attention building."
+},
+{
+  "Rainbow Rope Eye Guide Exercise": "rainbow_rope_jumps.mp4",
+  "video_prompt": "Voice-guided cartoon instructs child to jump over a colorful rope held by a family member — keeping head still and eyes focused ahead. Enhances balance, eye stability, and full-body coordination without screen involvement."
+},
+{
+  "Color Hunt in Room Game": "room_color_scan.mp4", ?? mention different colours each day for the child to spot [This prompt is meant to generate a specific static video from a predefined set of 50. Showing different colors dynamically isn't feasible in a single video, and making it dynamic would significantly increase costs. As a workaround, we can add an instruction at the end of the video—using a cartoon character—to suggest doing the exercise with a different color each day]
+  "video_prompt": "A cartoon child in a colorful bedroom walks around scanning the room playfully, looking at books, toys, and clothes in different colors. Their eyes move from left to right as sparkles highlight red, blue, and yellow objects around the room. The child smiles and nods after spotting each color. At the end of the video, a friendly animated signboard appears with bouncing text that reads: 'Try different colors each day! For example: Day 1 – Blue, Red, Black • Day 2 – Yellow, Green, Pink • Day 3 – Orange, White, Purple'. Confetti and a cheerful jingle play as the child waves goodbye."
+},
+{
+  "Glow Dot Grid Jump Exercise": "glow_dot_grid_saccade.mp4", ?? keep the paper dots on floor to reduce mess [updated with floor]
+  "video_prompt": "A cartoon child sits comfortably on the floor with colorful paper dots arranged in a grid pattern around them — red, blue, yellow, green. A floating helper character or glowing voice bubble calls out color names or directions ('Left!', 'Red!', 'Top right!'), and the child quickly shifts their eyes from one dot to another without moving their head. Each time the eyes jump to a new dot, it sparkles briefly to show fast eye movement (saccade). The scene shows fun ambient music and soft background glow, emphasizing eye speed and focus in a playful, floor-based setting."
+},
+{
+  "Bouncing Letter Focus Game Exercise": "letter_focus_bounce.mp4",
+  "video_prompt": "Voice-guided cartoon shows how to play a paper letter toss game — family member tosses foam or paper letters gently around the child, who spots and shouts the letter before catching or pointing — builds focus and visual reaction speed without screens."
+},
+{
+  "Star Figure Tracking Exercise": "star_pattern_tracking.mp4",  ?? finding clouds in all weathers is not possible- replace this exercise [replaced the exercise from the floating cloud to star figure tracking exercise]
+  "video_prompt": "A glowing cartoon star floats in front of the child and begins tracing a star-shaped path in the air — moving smoothly in diagonal and straight lines. The child follows the star with their eyes only, head still, as sparkles trail behind it to guide the path. Each corner point of the star glows briefly when the eyes reach it. Calm music and a soft whoosh play with each turn. At the end, the star winks and gently floats upward as the child blinks with a smile."
+},
+{
+  "Foot Tap Direction Game": "foot_tap_eye_lead.mp4",
+  "video_prompt": "Cartoon child listens for a parent calling directions ('left', 'right', 'behind') and taps the respective foot while keeping eyes fixed on a toy ahead. Animated sparkles highlight each foot tap, enhancing auditory cue to visual-body connection."
+},
+{
+  "Color Toss Sorting Game": "color_toss_sorting.mp4", ?? can be replaced as sorting/tossing same coloured objects into one bag [updated]
+  "video_prompt": "Cartoon child looks around the room and finds small colored balls or bean bags scattered nearby. One by one, the child identifies each object's color with their eyes, then tosses it into a matching colored bag placed in front of them — red into red, blue into blue, and so on. The eyes sparkle when spotting a color, and fun animated balloons cheer with every correct toss. A rainbow-colored dog claps at the end as all the bags are filled correctly."
+},
+{
+  "Pillow Maze Obstacle Game": "pillow_maze_navigation.mp4",
+  "video_prompt": "Animated child crawls through a home-made pillow tunnel maze guided only by verbal cues from a sibling. Their eyes shine with joy while peeking out through each gap — trains navigation and vision mapping."
+},
+{
+  "Box Peek & Recall Game": "box_peek_memory.mp4",
+  "video_prompt": "Cartoon child peeks inside a box for 3 seconds, then looks away and recalls 3 colored objects from memory while pointing them out. Thought bubbles animate each item, improving visual memory and blink training."
+},
+{
+  "Soap Bubble Pop Walk Game": "bubble_pop_chase.mp4",
+  "video_prompt": "An animated child joyfully runs across a grassy field popping soap bubbles by watching them closely and tapping mid-air — giggles and music highlight quick visual tracking and depth perception training."
+},
+{
+  "Shadow Shape Tracing Game":"shadow_trace_game.mp4",
+  "video_prompt": "Cartoon child uses chalk or fingers to trace shadows of objects cast by sunlight — shadows of trees, toys, and pets stretch on the floor. The scene sparkles as tracing encourages light awareness and visual-motor engagement."
+},
+{
+  "Toy Toss and Spot Game": "toy_toss_spot_game.mp4",
+  "video_prompt": "Parent gently tosses a toy behind or to the side of an animated child. The child quickly turns eyes only to spot where it landed, without head turn first. A playful sparkle rewards correct gaze direction — boosts peripheral vision."
+},
+{
+  "Animal Track and Freeze Game": "animal_track_freeze.mp4",
+  "video_prompt": "A child pretends to be a jungle explorer outdoors. When parent shouts an animal ('lion', 'parrot'), child stops and tracks that direction with eyes only, then freezes. Jungle sounds and wildlife appear in animation — training reflex and direction sense."
+}
+]
+
+}

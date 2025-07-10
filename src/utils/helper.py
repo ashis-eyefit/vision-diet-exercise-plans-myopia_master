@@ -660,7 +660,7 @@ def store_day_plan(user_id: str, cursor, db,  data: Union[DayPlanOutput, None] =
             ))
 
         db.commit()
-
+        db.close()
 
 
             
@@ -676,6 +676,27 @@ def store_day_plan(user_id: str, cursor, db,  data: Union[DayPlanOutput, None] =
         return {"status": "error", "message": str(e), "output":"No output due to server error"}
     
 
+
+###Get the last feedback for a specific user
+def get_latest_feedback_number(user_id: str, cursor):
+    try:
+        # Make sure previous results are cleared
+        cursor.fetchall()  # if anything pending from earlier
+    except:
+        pass  # optional, skip if nothing to clear
+
+    try:
+        cursor.execute("""
+            SELECT feedback_number
+            FROM feedback
+            WHERE user_id = %s
+            ORDER BY feedback_number DESC
+            LIMIT 1
+        """, (user_id,))
+        result = cursor.fetchone()
+        return result[0] if result else 0
+    except Exception as e:
+        raise RuntimeError(f"Error fetching feedback number: {e}")
 
 
 #### show the generated plans from data base without regenerating again

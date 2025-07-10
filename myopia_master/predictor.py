@@ -1,7 +1,7 @@
 # Load json files
 import json
 import os
-from data_extractor import parse_myopia_data
+from myopia_master.data_extractor import parse_myopia_data
 
 base_dir = os.path.dirname(__file__)
 
@@ -128,7 +128,7 @@ def predict_myopia_risk(input_data, threshold_map, scoring_weights, demographic_
         ### Right eye score
         elif factor in right_factor and value:
             
-            ## biometric factors depens on demogrphies [age, gender and ethnicity]
+            ## biometric factors depens on demogrphies [age and ethnicity]
             if factor in ["axial_length_right", "keratometry_right"]:
                 if threshold_map[factor][age_group][ethnicity]:
                     value_map_dict_all_demoraphies = threshold_map[factor][age_group][ethnicity]
@@ -169,7 +169,7 @@ def predict_myopia_risk(input_data, threshold_map, scoring_weights, demographic_
                 else:
                     factor_score_right, level = 0, "safe / factor is not defined"
                 detail_scores[factor]["risk_level"] = level
-
+                #print("------------------------------------------", detail_scores)
 
             ## demographies independent biometric factors
             elif factor == "al_percentile_right":
@@ -316,7 +316,7 @@ def predict_myopia_risk(input_data, threshold_map, scoring_weights, demographic_
             "left": eye_wise_risk_band(left_eye_score + shared_score),
             "right": eye_wise_risk_band(right_eye_score + shared_score),
         },
-        #"divider":"========================================== FACTOR WISE DETAILED SCORE ====================================================",
+        "divider":"========================================== FACTOR WISE DETAILED SCORE ====================================================",
         "details": detail_scores
     }
 
@@ -410,7 +410,7 @@ def myopia_wrapper(user_id, pdf_path, cursor):
     "room_lighting": shared_data["lighting_quality"], ####
     "common_symptoms": shared_data[ "symptoms"] #####
     }
-    print(input_data)
+    #print(input_data)
     result = predict_myopia_risk(
         input_data=input_data,
         threshold_map=threshold_map,
@@ -418,158 +418,315 @@ def myopia_wrapper(user_id, pdf_path, cursor):
         demographic_schema=demographic_schema
     )
     
-
-    return result
+    return result, ethnicity, input_data
 
 #print(myopia_wrapper())
 
-def system_prompt():
-    return """
-        You are a senior pediatric ophthalmologist and vision care expert. You generate medically accurate, conservative, and actionable insights from structured risk data used in a commercial child myopia management platform.
+####### Store the data into the db ####################
+import mysql.connector
+from mysql.connector import Error
+import json
 
-        This platform is used by real families and doctors. Never provide misleading, speculative, or unverified information. Never recommend medications, surgery, or medical devices unless explicitly mentioned in the input.
+def store_myopia_data(user_id:str, input_data: dict, prediction_data: dict, ai_insight_data: dict, db):
+    try:
+    
+        cursor = db.cursor(dictionary = True)
 
-        Use only best practices in pediatric optometry and public health. All insights must be realistic, age-appropriate, and safe.
+        # === 1. Insert into myopia_input_data ===
+        insert_input_query = """
+        INSERT INTO myopia_input_data (
+            user_id, age, ethnicity, axial_length_right, axial_length_left,
+            spherical_eq_right, spherical_eq_left, keratometry_right, keratometry_left,
+            cylinder_right, cylinder_left, al_percentile_right, al_percentile_left,
+            parental_history_myopia, daily_outdoor_time_hours, screen_time_hours_per_day,
+            average_sleep_hours, hydration_level, diet_quality, room_lighting,
+            common_symptoms, created_at
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+        """
 
-        Instructions:
-        You will receive structured JSON input with a child profile and vision risk details. Each factor includes both:
-        - a numeric score (representing severity or magnitude)
-        - a categorical risk_level ("low", "moderate", or "high")
-            Use `risk_level` to determine whether to write full or brief insights.
-            Use `score` to adjust the tone of explanation: a high score within a risk band may warrant stronger recommendations
-        - Input includes child demographics and vision risk levels for multiple biometric and lifestyle factors.
-        - Each factor has a `risk_level` of either `low`, `moderate`, or `high`.
+        common_symptoms_json = json.dumps(input_data.get("common_symptoms", []))
 
-        Guidelines:
-        1. For **high** and **moderate** risks:
+        input_values = (
+            user_id, input_data["age"], input_data["ethnicity"],
+            input_data.get("axial_length_right"), input_data.get("axial_length_left"),
+            input_data.get("spherical_eq_right"), input_data.get("spherical_eq_left"),
+            input_data.get("keratometry_right"), input_data.get("keratometry_left"),
+            input_data.get("cylinder_right"), input_data.get("cylinder_left"),
+            input_data.get("al_percentile_right"), input_data.get("al_percentile_left"),
+            input_data.get("parental_history_myopia"),
+            input_data.get("daily_outdoor_time_hours"),
+            input_data.get("screen_time_hours_per_day"),
+            input_data.get("average_sleep_hours"),
+            input_data.get("hydration_level"), input_data.get("diet_quality"),
+            input_data.get("room_lighting"), common_symptoms_json
+        )
+
+        cursor.execute(insert_input_query, input_values)
+        input_id = cursor.lastrowid
+
+        # === 2. Insert into myopia_predictions ===
+        insert_prediction_query = """
+        INSERT INTO myopia_predictions (
+            input_id, user_id, age_group, left_eye_score, right_eye_score, shared_score,
+            total_score, overall_risk_level, eye_risk_levels, factor_wise_scores, created_at
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+        """
+
+        prediction_values = (
+            input_id,
+            user_id,
+            prediction_data.get("age_group"),
+            prediction_data.get("left_eye_score"),
+            prediction_data.get("right_eye_score"),
+            prediction_data.get("shared_score"),
+            prediction_data.get("total_score"),
+            prediction_data.get("overall_risk_level"),
+            json.dumps(prediction_data.get("eye_risk_levels", {})),
+            json.dumps(prediction_data.get("details", {}))
+        )
+
+        cursor.execute(insert_prediction_query, prediction_values)
+
+        # === 3. Insert into myopia_ai_insights ===
+        insert_insight_query = """
+        INSERT INTO myopia_ai_insights (
+            input_id, user_id, summary, axial_length_left, axial_length_right, spherical_eq_left, spherical_eq_right,
+            keratometry_left, keratometry_right, cylinder_left, cylinder_right, al_percentile_left, al_percentile_right,
+            hydration_level, diet_quality, screen_time_hours_per_day, daily_outdoor_time_hours,
+            average_sleep_hours, parental_history_myopia, room_lighting, common_symptoms, created_at
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+        """
+
+        insight_values = (
+            input_id,
+            user_id,
+            json.dumps(ai_insight_data.get("summary")),
+            json.dumps(ai_insight_data.get("axial_length_left")),
+            json.dumps(ai_insight_data.get("axial_length_right")),
+            json.dumps(ai_insight_data.get("spherical_eq_left")),
+            json.dumps(ai_insight_data.get("spherical_eq_right")),
+            json.dumps(ai_insight_data.get("keratometry_left")),
+            json.dumps(ai_insight_data.get("keratometry_right")),
+            json.dumps(ai_insight_data.get("cylinder_left")),
+            json.dumps(ai_insight_data.get("cylinder_right")),
+            json.dumps(ai_insight_data.get("al_percentile_left")),
+            json.dumps(ai_insight_data.get("al_percentile_right")),
+            json.dumps(ai_insight_data.get("hydration_level")),
+            json.dumps(ai_insight_data.get("diet_quality")),
+            json.dumps(ai_insight_data.get("screen_time_hours_per_day")),
+            json.dumps(ai_insight_data.get("daily_outdoor_time_hours")),
+            json.dumps(ai_insight_data.get("average_sleep_hours")),
+            json.dumps(ai_insight_data.get("parental_history_myopia")),
+            json.dumps(ai_insight_data.get("room_lighting")),
+            json.dumps(ai_insight_data.get("common_symptoms"))
+        )
+
+        cursor.execute(insert_insight_query, insight_values)
+
+        db.commit()
+        #print("✅ Myopia input, prediction, and insight data stored successfully.")
+
+    except Error as e:
+        if db:
+            db.rollback()
+        print("❌ Error:", str(e))
+
+    finally:
+        if cursor:
+            cursor.close()
+
+############ Generate output ###################
+
+import openai
+from typing import Dict
+import os
+import json
+import asyncio
+from myopia_master.sqldb import get_db
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = openai.OpenAI(api_key = os.getenv("OPENAI_API"))
+
+pdf_path = r"C:\Users\DELL\Desktop\R1_Project\Vision_Exercise_Project\data\raw\Myopia-Report-sample.pdf"
+
+
+def generate_predictions_and__ai_insights(pdf_path, user_id) -> Dict[str, str]:
+  try:
+    db = get_db()
+    cursor = db.cursor(dictionary=True)
+    result, ethnicity, input_data = myopia_wrapper(pdf_path=pdf_path, user_id=user_id, cursor=cursor)
+    
+    system_prompt = """
+      You are a senior pediatric ophthalmologist and vision care expert. You generate medically accurate, conservative, and actionable insights from structured risk data used in a commercial child myopia management platform.
+
+      This platform is used by real families and doctors. Never provide misleading, speculative, or unverified information. Never recommend medications, surgery, or medical devices unless explicitly mentioned in the input.
+
+      Use only best practices in pediatric optometry and public health. All insights must be realistic, age-appropriate, and safe.
+
+      Instructions:
+      You will receive an input with a child profile and vision risk details. Each risk factor includes both:
+      - a numeric score (representing severity or magnitude)
+      - a categorical risk_level ("low", "moderate", or "high")
+          Use `risk_level` to determine whether to write full or brief insights.
+          Use `score` to adjust the tone of explanation: a high score within a risk band may warrant stronger recommendations
+      - Input includes child demographics and vision risk levels for multiple biometric and lifestyle factors.
+      - Each factor has a `risk_level` of either `low`, `moderate`, or `high`.
+
+      Guidelines:
+      1. For **high** and **moderate** risks:
         - Explain the **likely cause** of the risk level.
         - Describe **future consequences** if left unmanaged.
         - Suggest **safe, evidence-based interventions**: lifestyle, behavior, screen hygiene, diet, or eye exercises.
         - Provide a **realistic timeline** for improvement (e.g., 6–12 months).
 
-        2. For **low** risk factors:
+      2. For **low** risk factors:
         - Briefly note the cause of low risk.
         - Suggest **light preventive advice** to avoid worsening over time.
 
-        3. Do not hallucinate scores, create fictional treatments, or exaggerate outcomes.
-        4. Write in **supportive, professional, parent-friendly language**.
-        5. Format insights clearly: 1 paragraph per factor. Include a short summary at the end if requested.
-        6. Output format requirement:
-            Return the insights strictly as a valid JSON object. Each key should be a factor name. Each value must be an object with the following keys:
-            - "risk_level": one of ["low", "moderate", "high"]
-            - "cause": string (explain why this risk is present)
-            - "future_consequences": string (what may happen if unmanaged)
-            - "recommendations": string (safe lifestyle/behavior changes)
-            - "timeline": string (realistic expected time for improvement)
+      3. Do not hallucinate scores, create fictional treatments, or exaggerate outcomes.
+      4. Write in **supportive, professional, parent-friendly language**.
+      5. Format insights clearly: 1 paragraph per factor. Include a short summary at the end if requested.
+      6. Output format requirement:
+          Return the insights strictly as a valid JSON object. Each key should be a factor name. Each value must be an object with the following keys:
+          - "risk_level": one of ["low", "moderate", "high"]
+          - "cause": string (explain why this risk is present)
+          - "future_consequences": string (what may happen if unmanaged)
+          - "recommendations": string (safe lifestyle/behavior changes)
+          - "timeline": string (realistic expected time for improvement)
 
-            Include a separate key `"summary"` with a short plain-language and point wise (with number) summary for parents.
-            Do not return any extra commentary, markdown, or explanation — only valid JSON.
+          Include a separate key `"summary"` with a short plain-language and point wise (with number) summary for parents.
+          Do not return any extra commentary, markdown, or explanation — only valid JSON.
 
-        Speak conservatively and factually — this is for a medical product.
+      Speak conservatively and factually — this is for a medical product.
+      """
+    
+    risk_score_details = result["details"]
+    user_prompt = f"""
+          child profile: 
+            - age: {result["age"]}
+            - ethnicity: {ethnicity}
+    
+          vision_risk_details:
+            - axial_length_left: 
+              score: {risk_score_details['axial_length_left']['score']}
+              risk_level: {risk_score_details['axial_length_left']['risk_level']}
+            
+            - axial_length_right: 
+              score: {risk_score_details['axial_length_right']['score']}
+              risk_level: {risk_score_details['axial_length_right']['risk_level']}
+            
+            - spherical_eq_left: 
+              score : {risk_score_details['spherical_eq_left']['score']}
+              risk_level: {risk_score_details['spherical_eq_left']['risk_level']}
+              
+            - spherical_eq_right: 
+              score: {risk_score_details['spherical_eq_right']['score']}
+              risk_level: {risk_score_details['spherical_eq_right']['risk_level']}
+        
+            - keratometry_left: 
+              score: {risk_score_details['keratometry_left']['score']}
+              risk_level: {risk_score_details['keratometry_left']['risk_level']}
+            
+            - keratometry_right":
+              score: {risk_score_details['keratometry_right']['score']}
+              risk_level: {risk_score_details['keratometry_right']['risk_level']}
+        
+            - cylinder_left": 
+              score: {risk_score_details['cylinder_left']['score']}
+              risk_level: {risk_score_details['cylinder_left']['risk_level']}
+            
+            - cylinder_right: 
+              score:{risk_score_details['cylinder_right']['score']}"
+              risk_level: {risk_score_details['cylinder_right']['risk_level']}
+            
+            - al_percentile_left: 
+              score: {risk_score_details['al_percentile_left']['score']}
+              risk_level: {risk_score_details['al_percentile_left']['risk_level']}
+            
+            - al_percentile_right: 
+              score: {risk_score_details['al_percentile_right']['score']}
+              risk_level: {risk_score_details['al_percentile_right']['risk_level']}
+
+
+            - daily_outdoor_time_hours:
+              score: {risk_score_details['daily_outdoor_time_hours']['score']}
+              "risk_level": {risk_score_details['daily_outdoor_time_hours']['risk_level']}
+            
+            - screen_time_hours_per_day: 
+              score: {risk_score_details['screen_time_hours_per_day']['score']}
+              risk_level: {risk_score_details['screen_time_hours_per_day']['risk_level']}
+            
+            - average_sleep_hours: 
+              score: {risk_score_details['average_sleep_hours']['score']}
+              risk_level: {risk_score_details['average_sleep_hours']['risk_level']}
+            
+            - room_lighting:
+              score: {risk_score_details['room_lighting']['score']}
+              risk_level: {risk_score_details['room_lighting']['risk_level']}
+            
+            - hydration_level: 
+              score: {risk_score_details["hydration_level"]['score']}
+              risk_level: {risk_score_details['hydration_level']['risk_level']}
+        
+            - diet_quality: 
+              score: {risk_score_details['diet_quality']['score']}
+              risk_level: {risk_score_details['diet_quality']['risk_level']}
+            
+            - common_symptoms: 
+              score: {risk_score_details['common_symptoms']['score']}
+              risk_level: {risk_score_details['common_symptoms']['risk_level']}
+        
+            - parental_history_myopia: 
+              score: {risk_score_details['parental_history_myopia']['score']}
+              risk_level: {risk_score_details['parental_history_myopia']['risk_level']}
+            
+        Finally, include an overall summary of the report
         """
 
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ],
+        temperature=0.7,
+        max_tokens=4500,
+    )
+    content = response.choices[0].message.content
 
-    
-''''
-def user_prompt(user_id, pdf_path, cursor):
-    response = myopia_wrapper(user_id, pdf_path, cursor)
-    details = response["details"]
-    return f"""
-    {
-      "child_profile": {
-        "age": 10,
-        "ethnicity": "caucasian"
-      },
-      "vision_risk_details": {
-        "axial_length_left": {
-          "score": 6.0,
-          "risk_level": "high"
-        },
-        "axial_length_right": {
-          "score": 1.0,
-          "risk_level": "low"
-        },
-        "spherical_eq_left": {
-          "score": 4.5,
-          "risk_level": "high"
-        },
-        "spherical_eq_right": {
-          "score": 4.5,
-          "risk_level": "high"
-        },
-        "keratometry_left": {
-          "score": 3.0,
-          "risk_level": "high"
-        },
-        "keratometry_right": {
-          "score": 1.5,
-          "risk_level": "moderate"
-        },
-        "cylinder_left": {
-          "score": 1.5,
-          "risk_level": "moderate"
-        },
-        "cylinder_right": {
-          "score": 0.5,
-          "risk_level": "low"
-        },
-        "al_percentile_left": {
-          "score": 6.0,
-          "risk_level": "high"
-        },
-        "al_percentile_right": {
-          "score": 6.0,
-          "risk_level": "high"
-        },
-        "daily_outdoor_time_hours": {
-          "score": 4.0,
-          "risk_level": "high"
-        },
-        "screen_time_hours_per_day": {
-          "score": 3.0,
-          "risk_level": "high"
-        },
-        "average_sleep_hours": {
-          "score": 2.0,
-          "risk_level": "high"
-        },
-        "room_lighting": {
-          "score": 0.5,
-          "risk_level": "high"
-        },
-        "hydration_level": {
-          "score": 1.0,
-          "risk_level": "moderate"
-        },
-        "diet_quality": {
-          "score": 1.0,
-          "risk_level": "high"
-        },
-        "common_symptoms": {
-          "score": 0.75,
-          "risk_level": "low"
-        },
-        "parental_history_myopia": {
-          "score": 2.0,
-          "risk_level": "moderate"
+    if not content:
+      raise ValueError("OpenAI response content is empty!")
+
+    # Clean triple-backtick blocks, if present
+    if content.startswith("```json"):
+      content = content.strip("```json").strip("```").strip()
+    elif content.startswith("```"):
+      content = content.strip("```").strip()
+
+      # debuging print
+    #print("🔎 Cleaned Content:\n", content)
+
+    parsed_content = json.loads(content)
+    final_result = {
+        #"Predictions": result,
+        #"AI-Insights": parsed_content,
+        "message": "myopia data generated and stored successfully"
         }
-      },
-      "include_summary": true
-    }
+    ### store the data when this function triggered###
+    store_myopia_data(user_id= user_id, input_data=input_data, prediction_data= result, ai_insight_data=parsed_content, db = db)
+    db.close()
+    return final_result
+  except json.JSONDecodeError as e:
+    raise ValueError(f"Failed to parse JSON. Raw content:\n{content}\n\nError: {e}")
 
-    """
-    '''
 
 
 
 #### debugging part
-def final_myopia_wrapper():
-    pdf_path = r"C:\Users\DELL\Desktop\R1_Project\Vision_Exercise_Project\data\raw\Myopia-Report-sample.pdf"
 
-    from sqldb import get_db
 
-    db = get_db()
-    cursor = db.cursor(dictionary=True)
-    print((myopia_wrapper(pdf_path=pdf_path, user_id="Ganesh_Sri12", cursor=cursor)["details"]))
+#sample_pdf = r"C:\Users\DELL\Desktop\R1_Project\Vision_Exercise_Project\data\raw\MM019.pdf"
 
-    return (myopia_wrapper(pdf_path=pdf_path, user_id="Ganesh_Sri12", cursor=cursor)["details"])
+#print(generate_predictions_and__ai_insights(pdf_path=sample_pdf, user_id="Ganesh_Sri12"))

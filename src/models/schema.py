@@ -24,7 +24,6 @@ class UserOnboardingAnswerBase(BaseModel):
 
 ## eye health questionnaires data schema
 class IntakeForm(BaseModel):
-    user_id: str
     symptoms: List[str]
     sleepHours: float
     bedTime: str
@@ -38,8 +37,6 @@ class IntakeForm(BaseModel):
 
 ## feedback schema
 class FeedbackSchema(BaseModel):
-    user_id: str # mandatory field
-    feedback_number: int = 0
     symptom_improvement: str
     exercise_frequency: str
     hydration_consistency: str
@@ -75,10 +72,6 @@ class DayPlanOutput(BaseModel):
 
 ### Daily user activity log (activity done or not)
 class DailyUserActivityLog(BaseModel):
-    user_id: str
-    session_id: str
-    day: int = Field(..., ge=1, le=15)
-
     # Optional boolean fields
     exercise_1_done: Optional[bool] = False
     exercise_2_done: Optional[bool] = False

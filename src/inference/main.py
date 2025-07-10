@@ -1,17 +1,18 @@
 from fastapi import FastAPI, Depends, HTTPException
 from src.data.client_data import get_db
 from src.models.schema import FeedbackSchema, UserOnboardingAnswerBase, UserPersonalDataCreate, IntakeForm, DailyUserActivityLog
-from src.utils.helper import generate_session_id, get_data_llm_output, store_day_plan, get_llm_input
+from src.utils.helper import generate_session_id, get_data_llm_output, store_day_plan, get_llm_input, get_latest_feedback_number
 import os
 import json
 from dotenv import load_dotenv
 from tests.fatigue_score import calculate_fatiue_score
-from myopia_master.predictor import myopia_wrapper
+#from myopia_master.predictor import myopia_wrapper
 from contextlib import asynccontextmanager
 from scheduler import start_scheduler
 from notifications import send_feedback_reminders
 from notifications.send_feedback_reminders import get_db_connection
 from typing import Dict,List
+from notifications.send_feedback_reminders import update_feedback_queue_from_feedback
 
 
 load_dotenv()
@@ -76,7 +77,7 @@ async def create_user_personal_onboarding_data(data: UserOnboardingAnswerBase, d
                     ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
 
-            await cursor.execute(query, (data.user_id, data.outdoor_hours_per_day, 
+            cursor.execute(query, (data.user_id, data.outdoor_hours_per_day, 
                                 data.screen_hours_per_day, data.follows_20_20_20_rule, 
                                 data.holds_screen_too_close, data.parent_has_myopia, 
                                 data.has_headaches_or_distance_vision_issues, 
@@ -94,78 +95,108 @@ async def create_user_personal_onboarding_data(data: UserOnboardingAnswerBase, d
 #-------------------------------------------------------------------------------------------------------------------------------
 
 ## intake eye health questionnaries daata store in mysql db through post request
-@app.post("/submit-intake")
-async def submit_intake(data: IntakeForm, db=Depends(get_db)):
+@app.post("/submit-intake/{user_id}")
+async def submit_intake(user_id:str,  data: IntakeForm, db=Depends(get_db)):
     try:
-        if data.user_id:
-            cursor = db.cursor()
+        
+        cursor = db.cursor()
 
-            query = """
-            INSERT INTO intake_questionnaire(
-                user_id, symptoms, sleep_hours, bedtime, usual_diet_type, diet_quality, hydration_frequency, screen_brightness, 
-                diagnosed_conditions, current_medications, parents_diagnosed_conditions
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """
+        query = """
+        INSERT INTO intake_questionnaire(
+            user_id, symptoms, sleep_hours, bedtime, usual_diet_type, diet_quality, hydration_frequency, screen_brightness, 
+            diagnosed_conditions, current_medications, parents_diagnosed_conditions
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """
 
-            values = (
-                data.user_id,
-                ",".join(data.symptoms),
-                data.sleepHours,
-                data.bedTime,
-                data.usualDietType,
-                data.dietQuality,
-                data.hydrationFrequency,
-                data.screenBrightness,
-                ",".join(data.diagnosedConditions),
-                data.currentMedications,
-                ",".join(data.parentsDiagnosedConditions)
+        values = (
+            user_id,
+            ",".join(data.symptoms),
+            data.sleepHours,
+            data.bedTime,
+            data.usualDietType,
+            data.dietQuality,
+            data.hydrationFrequency,
+            data.screenBrightness,
+            ",".join(data.diagnosedConditions),
+            data.currentMedications,
+            ",".join(data.parentsDiagnosedConditions)
+        )
+
+        cursor.execute(query, values)
+        db.commit()
+        feedback_number = 0
+        session_id = generate_session_id(user_id, feedback_number)
+        cursor = db.cursor()
+        cursor.execute("""
+            INSERT INTO feedback (
+                user_id, session_id, feedback_number, symptom_improvement,
+                exercise_frequency, hydration_consistency,
+                screen_breaks, next_focus_area,
+                new_symptoms_observed
             )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (
+            user_id,
+            session_id,
+            feedback_number,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        ))
+        db.commit()
+        cursor.close()
+        cursor2 = db.cursor(dictionary = True)
+        store_day_plan(user_id=user_id, db=db, cursor=cursor2)
+        cursor2.close()
+        update_feedback_queue_from_feedback()
+        db.close()
 
-            await cursor.execute(query, values)
-            db.commit()
-            cursor.close()
-            db.close()
-
-            return {"message": " eye health answers data inserted successfully"}
-        else:
-            return{"message":"  Kindly provide the correct user_id that "}
+        return {"message": " eye health answers data inserted and generated plan successfully"}
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
 ### storing user feedback data in mysql database throgh post request
-@app.post("/submit-feedback")
-async def submit_feedback(feedback: FeedbackSchema, db = Depends(get_db)):
+@app.post("/submit-feedback/{user_id}")
+async def submit_feedback(user_id:str, feedback: FeedbackSchema, db = Depends(get_db)):
     try:
-        if feedback.user_id:
-            session_id = generate_session_id(feedback.user_id, feedback.feedback_number)
-            cursor = db.cursor()
-            await cursor.execute("""
-                INSERT INTO feedback (
-                    user_id, session_id, feedback_number, symptom_improvement,
-                    exercise_frequency, hydration_consistency,
-                    screen_breaks, next_focus_area,
-                    new_symptoms_observed
-                )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """, (
-                feedback.user_id,
-                session_id,
-                feedback.feedback_number,
-                feedback.symptom_improvement,
-                feedback.exercise_frequency,
-                feedback.hydration_consistency,
-                feedback.screen_breaks,
-                feedback.next_focus_area,
-                feedback.new_symptoms_observed
-            ))
-            db.commit()
-            cursor.close()
-            db.close()
-            return {"message": "Feedback submitted successfully"}
-        else:
-            return{"message":"  Kindly provide the correct user_id that "}
+        cursor1 = db.cursor()
+        feedback_number = get_latest_feedback_number(user_id, cursor1)
+        feedback_number = feedback_number+1
+        session_id = generate_session_id(user_id, feedback_number)
+        cursor = db.cursor()
+        cursor.execute("""
+            INSERT INTO feedback (
+                user_id, session_id, feedback_number, symptom_improvement,
+                exercise_frequency, hydration_consistency,
+                screen_breaks, next_focus_area,
+                new_symptoms_observed
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (
+            user_id,
+            session_id,
+            feedback_number,
+            feedback.symptom_improvement,
+            feedback.exercise_frequency,
+            feedback.hydration_consistency,
+            feedback.screen_breaks,
+            feedback.next_focus_area,
+            feedback.new_symptoms_observed
+        ))
+        db.commit()
+        cursor.close()
+        cursor2 = db.cursor(dictionary = True)
+        store_day_plan(user_id=user_id, db=db, cursor=cursor2)
+        update_feedback_queue_from_feedback()
+        db.close()
+
+        return {"message": "Feedback submitted and generated plan successfully"}
+    
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
@@ -183,7 +214,7 @@ def get_all_users(db=Depends(get_db)):
 
 
 
-########### Retrieving CLIENT side data from the database and showing in ui for internal use only to check the llm input ##################
+"""########### Retrieving CLIENT side data from the database and showing in ui for internal use only to check the llm input ##################
 
 @app.get("/get-llm-input/{user_id}")
 def get_llm_input_data(user_id: str, db = Depends(get_db)):
@@ -202,28 +233,84 @@ def get_llm_input_data(user_id: str, db = Depends(get_db)):
         cursor.close()
         db.close()
 
+"""
 
 
+####### LLM OUTPUT PLAN TO SHOW IN UI ################
 
-"""####### LLM OUTPUT PLAN TO SHOW IN UI ################
-
-@app.get("/output-plan-from-llm/{user_id}")
-def llm_output(user_id: str, db = Depends(get_db)):
-
+ #### show the plan button. once plan is generated disable the generate button and enable show button
+@app.get("/get-latest-plan/{user_id}")
+def get_latest_14_day_plan(user_id: str, db=Depends(get_db)):
     try:
-        cursor = db.cursor(dictionary = True)
-        output, feedback_number = get_data_llm_output(user_id, cursor)
-        print({"Plan": output, "feedback_number":feedback_number})
-        return {"Plan": output, "feedback_number":feedback_number}
+        cursor = db.cursor(dictionary=True)
+
+        # Step 1: Check if any plan exists for user
+        cursor.execute("""
+            SELECT session_id 
+            FROM generated_daywise_plans
+            WHERE user_id = %s
+            ORDER BY session_id DESC 
+            LIMIT 1
+        """, (user_id,))
+        session = cursor.fetchone()
+        if not session:
+            return {
+                "status": "no_plan",
+                "message": f"No plan found for user {user_id}. Kindly generate your plan."
+            }
+
+        session_id = session["session_id"]
+
+        # Step 2: Fetch all 14 day plans
+        cursor.execute("""
+            SELECT 
+                day_number,
+                exercises,
+                meals,
+                hydration_tip,
+                child_message,
+                parent_nudge
+            FROM generated_daywise_plans
+            WHERE user_id = %s AND session_id = %s
+            ORDER BY day_number ASC
+        """, (user_id, session_id))
+
+        rows = cursor.fetchall()
+        if not rows:
+            return {
+                "status": "no_plan",
+                "message": f"No plan stored yet for session {session_id}. Kindly generate your plan."
+            }
+
+        # Step 3: Format response
+        plan = []
+        for row in rows:
+            plan.append({
+                "day_number": row["day_number"],
+                "exercises": json.loads(row["exercises"]),
+                "meals": json.loads(row["meals"]),
+                "hydration_tip": row["hydration_tip"],
+                "child_message": row["child_message"],
+                "parent_nudge": row["parent_nudge"]
+            })
+
+        return {
+            "status": "success",
+            "user_id": user_id,
+            "session_id": session_id,
+            "plan": plan
+        }
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))"""
-    
+        raise HTTPException(status_code=500, detail=f"Failed to fetch plan: {str(e)}")
 
+    finally:
+        if cursor: cursor.close()
+        if db: db.close()
 
 ###### Success message to the user and automatically storing the daywise LLM output data confirmation in mysql db by the help of heper file ##########
 
-@app.get("/load-llm-output-success-message/{user_id}")
+@app.get("/load-llm-output-success-message/{user_id}") ### generate the plan button
 def confirmation_store_data_n_db(user_id: str, db=Depends(get_db)):
     try:
         cursor = db.cursor(dictionary = True)
@@ -231,8 +318,12 @@ def confirmation_store_data_n_db(user_id: str, db=Depends(get_db)):
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
 
-#-----------------------------------------------------------------------------------------------------------------
+
+
+
+"""#-----------------------------------------------------------------------------------------------------------------
 #### fatiue score calculation
 @app.get("/fatigue-score-prediction/{user_id}")
 def predict_fatigue_score(user_id: str, db = Depends(get_db)):
@@ -242,9 +333,9 @@ def predict_fatigue_score(user_id: str, db = Depends(get_db)):
     except Exception as e:
         raise HTTPException(status_code = 500, detail= str(e))
     
-#----------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------"""
 
-#---------------------------------------------------------------------------------------------------    
+"""#---------------------------------------------------------------------------------------------------    
 #### notification send ###############
 @app.get("/test-feedback-reminder")
 def test_feedback_reminder_endpoint(db=Depends(get_db_connection)):
@@ -252,33 +343,26 @@ def test_feedback_reminder_endpoint(db=Depends(get_db_connection)):
         send_feedback_reminders.send_feedback_reminder_if_due()
         return {"status": "Reminder check executed"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))"""
 
-@app.get("/run-feedback-job")
+
+
+"""@app.get("/run-feedback-job")
 async def run_manual_job():
     try:
         from scheduler import start_scheduler
         start_scheduler()
         return {"status": "Manual job run executed"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))"""
 
-'''
-##### datailed myopic score showing in ui ########
-@app.get("/show-myopia-details")
-async def show_myopia_details():
-    try:
-        result = myopia_wrapper()
-        return {"result":result}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail= str(e))
-'''
+
 #---------------------------------------------------------------------------------------------------------------
 
 #### # POST endpoint to Load and track the user daily activity logs whether each acitivity done or not
 
-@app.post("/log-user-daily-activity/")
-async def log_activity(activity: DailyUserActivityLog, db=Depends(get_db)):
+@app.post("/log-user-daily-activity/{user_id}/{session_id}/{day}")
+async def log_activity(user_id:str, session_id: str, day:int, activity: DailyUserActivityLog, db=Depends(get_db)):
     try:
         cursor = db.cursor(dictionary=True)  # use dictionary to access by column names
 
@@ -287,7 +371,7 @@ async def log_activity(activity: DailyUserActivityLog, db=Depends(get_db)):
         SELECT * FROM daily_activity_log
         WHERE user_id = %s AND session_id = %s AND day = %s
         """
-        await cursor.execute(check_sql, (activity.user_id, activity.session_id, activity.day))
+        cursor.execute(check_sql, (user_id, session_id, day))
         existing = cursor.fetchone()
 
         if existing:
@@ -316,7 +400,7 @@ async def log_activity(activity: DailyUserActivityLog, db=Depends(get_db)):
                 updated_at = NOW()
             WHERE id = %s
             """
-            await cursor.execute(update_sql, (
+            cursor.execute(update_sql, (
                 merged['exercise_1_done'],
                 merged['exercise_2_done'],
                 merged['exercise_3_done'],
@@ -337,10 +421,10 @@ async def log_activity(activity: DailyUserActivityLog, db=Depends(get_db)):
                 hydration_followed
             ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-            await cursor.execute(insert_sql, (
-                activity.user_id,
-                activity.session_id,
-                activity.day,
+            cursor.execute(insert_sql, (
+                user_id,
+                session_id,
+                day,
                 activity.exercise_1_done,
                 activity.exercise_2_done,
                 activity.exercise_3_done,
@@ -412,89 +496,194 @@ def get_latest_saved_plan(user_id: str, db=Depends(get_db)):
     finally:
         cursor.close()
 
-##### Image generation dynamically ######
+#### Store the myopia report result through post call into the db###
 
+from myopia_master.predictor import generate_predictions_and__ai_insights
+
+
+@app.post("/myopia-report-generate-and-store/{user_id}")
+def generate_myopia_report_local(user_id: str , db=Depends(get_db)):
+    try:
+        # Temporary hardcoded PDF path for testing
+        sample_pdf_path = r"C:\Users\DELL\Desktop\R1_Project\Vision_Exercise_Project\data\raw\MM019.pdf"
+        result = generate_predictions_and__ai_insights(
+            pdf_path=sample_pdf_path,
+            user_id=user_id
+        )
+
+        return {
+            "message": f"✅{result}"
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+############ Myopia master result pulled from db through api ##########
+
+@app.get("/myopia-result/{user_id}")
+def get_clean_myopia_output(user_id: str, db=Depends(get_db)):
+    try:
+        cursor = db.cursor(dictionary=True)
+
+        # 1. Get latest input record to find input_id
+        cursor.execute("""
+            SELECT input_id FROM myopia_input_data 
+            WHERE user_id = %s 
+            ORDER BY created_at DESC 
+            LIMIT 1
+        """, (user_id,))
+        row = cursor.fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="No input record found")
+
+        input_id = row["input_id"]
+
+        # 2. Get prediction (cleaned)
+        cursor.execute("""
+            SELECT left_eye_score, right_eye_score, shared_score, total_score, 
+                   overall_risk_level, eye_risk_levels, factor_wise_scores, created_at
+            FROM myopia_predictions 
+            WHERE input_id = %s
+        """, (input_id,))
+        prediction = cursor.fetchone()
+        if prediction:
+            # Convert stringified JSON fields
+            prediction["eye_risk_levels"] = json.loads(prediction["eye_risk_levels"])
+            prediction["factor_wise_scores"] = json.loads(prediction["factor_wise_scores"])
+
+        # 3. Get AI insights (excluding ids and user_id)
+        cursor.execute("""
+            SELECT summary, axial_length_left, axial_length_right, spherical_eq_left, spherical_eq_right,
+                   keratometry_left, keratometry_right, cylinder_left, cylinder_right,
+                   al_percentile_left, al_percentile_right, hydration_level, diet_quality,
+                   screen_time_hours_per_day, daily_outdoor_time_hours, average_sleep_hours,
+                   parental_history_myopia, room_lighting, common_symptoms, created_at
+            FROM myopia_ai_insights 
+            WHERE input_id = %s
+        """, (input_id,))
+        insights = cursor.fetchone()
+        if insights:
+            # Convert all JSON columns back to dict
+            for key in insights:
+                if key != "created_at":
+                    insights[key] = json.loads(insights[key])
+
+        return {
+            "prediction_summary": prediction,
+            "ai_insights": insights
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"MySQL error: {str(e)}")
+    finally:
+        if cursor:
+            cursor.close()
+        if db:
+            db.close()
+
+
+################## Image generation part ##############
+from fastapi.staticfiles import StaticFiles
+
+app.mount("/outputs/generated_example_images", StaticFiles(directory="outputs/generated_example_images"), name="outputs")
+
+
+import os
+import json
+import hashlib
+from fastapi import FastAPI, Depends, HTTPException
 from diffusers import StableDiffusionPipeline
-import torch, os, hashlib
+import torch
+from src.utils.s3_utils import upload_image_to_s3, generate_s3_url, file_exists_in_s3
 
-
-# Load once globally
+dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+print("Starting model load")
 pipe = StableDiffusionPipeline.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
-    torch_dtype=torch.float32
+    "runwayml/stable-diffusion-v1-5", torch_dtype=dtype
 )
-pipe.to("cuda" if torch.cuda.is_available() else "cpu")  # Using CPU here for your local machine
-
-# Hash helper
+pipe.to("cuda" if torch.cuda.is_available() else "cpu")
+print(" model loaded")
 def hash_prompt(prompt):
     return hashlib.sha256(prompt.encode('utf-8')).hexdigest()[:16]
 
 
-@app.get("/generate-one-day-images/{user_id}")
-def generate_images_for_user(user_id: str, db=Depends(get_db)):
-
+@app.get("/generate-meal-images/{user_id}")
+def generate_all_meal_images(user_id: str, db=Depends(get_db)):
     cursor = db.cursor(dictionary=True)
     try:
-            # Get latest session_id
         cursor.execute("""
             SELECT session_id FROM generated_daywise_plans
             WHERE user_id = %s
             ORDER BY session_id DESC LIMIT 1
         """, (user_id,))
-        session_result = cursor.fetchone()
-        if not session_result:
-            return {"status": "error", "message": "No session found for user"}
+        session = cursor.fetchone()
+        if not session:
+            return {"status": "error", "message": "No plan found"}
 
-        session_id = session_result["session_id"]
+        session_id = session["session_id"]
 
-        # Get one day's plan (Day 1)
         cursor.execute("""
             SELECT day_number, meals FROM generated_daywise_plans
-            WHERE user_id = %s AND session_id = %s AND day_number = 1
+            WHERE user_id = %s AND session_id = %s
         """, (user_id, session_id))
-        plan = cursor.fetchone()
-        if not plan:
-            return {"status": "error", "message": "Day 1 plan not found"}
+        plans = cursor.fetchall()
 
-        meals = plan["meals"]
-        if isinstance(meals, str):
-            import json
-            meals = json.loads(meals)
+        if not plans:
+            return {"status": "error", "message": "No daywise plans found"}
 
-        image_paths = []
-        for meal_name in ["breakfast", "lunch", "snack", "dinner"]:
-            meal = meals.get(meal_name)
-            if not meal: continue
+        all_files = []
 
-            prompt = meal.get("image_prompt")
-            if not prompt: continue
+        for plan in plans:
+            day = plan["day_number"]
+            meals = plan["meals"]
+            if isinstance(meals, str):
+                meals = json.loads(meals)
 
-            # Generate hash-based filename
-            file_hash = hash_prompt(prompt)
-            output_dir = f"images/{user_id}/day1"
-            os.makedirs(output_dir, exist_ok=True)
-            file_path = os.path.join(output_dir, f"{meal_name}_{file_hash}.png")
+            for meal_name in ["breakfast", "lunch", "snack", "dinner"]:
+                meal = meals.get(meal_name)
+                if not meal: continue
 
-            if not os.path.exists(file_path):
-                print(f"Generating image for {meal_name}...")
-                image = pipe(prompt, num_inference_steps=20).images[0]
-                image.save(file_path)
-            else:
-                print(f"Image for {meal_name} already exists.")
+                prompt = meal.get("image_prompt")
+                if not prompt: continue
 
-            image_paths.append(file_path)
+                file_hash = hash_prompt(prompt)
+                filename = f"{meal_name}_{file_hash}.png"
+                local_dir = f"outputs/generated_example_images/{user_id}/{session_id}/day{day}"
+                os.makedirs(local_dir, exist_ok=True)
+                local_path = os.path.join(local_dir, filename)
+
+                s3_key = f"{user_id}/{session_id}/day{day}/{filename}"
+
+                if not os.path.exists(local_path):
+                    print(f"Generating for {user_id} Day {day} {meal_name}")
+                    image = pipe(prompt, num_inference_steps=20).images[0]
+                    image.save(local_path)
+
+                    # Upload to S3 if needed
+                    # upload_image_to_s3(local_path, s3_key)
+
+                # Append local or s3 URL
+                relative_path = local_path.replace("outputs/", "")
+                image_url = f"/outputs/{relative_path}"
+                # image_url = generate_s3_url(s3_key)
+
+                all_files.append({
+                    "day": day,
+                    "meal": meal_name,
+                    "filename": filename,
+                    "url": image_url
+                })
 
         return {
             "status": "success",
-            "message": f"Generated images for {user_id} - Day 1",
-            "files": image_paths
+            "message": f"Images generated for user {user_id}, session {session_id}",
+            "images": all_files
         }
 
     except Exception as e:
         return {"status": "error", "message": str(e)}
-
     finally:
-        cursor.close()
-        if db:
-            db.close()
-        
+        if cursor: cursor.close()
+        if db: db.close()
+
+

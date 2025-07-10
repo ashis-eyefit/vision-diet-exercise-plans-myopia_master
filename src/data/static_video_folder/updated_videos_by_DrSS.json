@@ -1,46 +1,46 @@
 {"videos_name_filename_promts":[
 {
-  "Eye-Hand Coordination Game": "eye_hand_coordination_game.mp4",
+  "Eye-Hand Coordination Game": "eye_hand_coordination_game.mp4", DONE
   "video_prompt": "Cartoon child plays a fun catch-the-ball game with parent in a garden, tracking and catching a bouncing colorful ball — showing exaggerated joyful eye tracking."
 },
 {
-  "Focus Training Ball Bouncing Game": "focus_training_game.mp4",
+  "Focus Training Ball Bouncing Game": "focus_training_game.mp4", DONE
   "video_prompt": "Animated child stares at a bouncing ball shifting distances, switching focus between ball and distant tree with superhero sparkles in the eyes each time focus shifts."
 },
 {
-  "Mirror Blink Race Exercise": "mirror_blink_game.mp4",
+  "Mirror Blink Race Exercise": "mirror_blink_game.mp4", DONE
   "video_prompt": "Child races cartoon self in mirror to blink fast with every time a bell sounds — boosts blink rate and eye moisture regulation."
 },
 {
-  "Eye Strain Relief Massage Exercise": "eye_strain_relief.mp4",
+  "Eye Strain Relief Massage Exercise": "eye_strain_relief.mp4", DONE
   "video_prompt": "Playful animation of child gently massaging around their eyes with fingers in circular motion, while relaxing clouds and soft sparkles float around."
 },
 {
-  "Palming Relaxation Exercise": "palming_relaxation.mp4",?? mention time duration for keeping palms on eyes and removing [updated with time]
+  "Palming Relaxation Exercise": "palming_relaxation.mp4", DONE     ?? mention time duration for keeping palms on eyes and removing [updated with time]
   "video_prompt": "A cheerful cartoon child sits cross-legged on a mat in a softly lit room. The child rubs palms together to warm them (5 seconds), then gently places them over closed eyes (hold for 20 seconds). A peaceful forest background appears with sparkles around the eyes. The child then removes palms slowly and smiles (5 seconds). The cycle repeats once more. End with birds chirping and a friendly voice saying, 'Your eyes feel fresh and happy!'"
 },
 {
-  "Near-Far Focus Switch Exercise": "near_far_focus.mp4",
+  "Near-Far Focus Switch Exercise": "near_far_focus.mp4", DONE
   "video_prompt": "Animated child switches gaze between a pencil held in front and a tree outside the window — glowing focus beams show eyes adjusting between near and far objects."
 },
 {
-  "Astigmatism Tracking Movement Exercise": "tracking_movement_exercise.mp4", ??-  how can the child find a butterfly outside? replace with something more commonly and easily available [updated with colorful crayon/pencil]
+  "Astigmatism Tracking Movement Exercise": "tracking_movement_exercise.mp4",  DONE   ??-  how can the child find a butterfly outside? replace with something more commonly and easily available [updated with colorful crayon/pencil]
   "video_prompt": "A cartoon child holds a colorful crayon with a smiley face sticker on it. The child stretches out one arm and slowly moves the crayon horizontally and then vertically, keeping the head still and following the tip only with their eyes. A glowing trail shows the eye movement as it tracks the crayon's path. The background is bright and simple, with fun music. A cheerful voice reminds, 'Only move your eyes, not your head!' End with a wink and sparkle around the eyes."
 },
 {
-  "Sunlight Play Task Game": "sunlight_play_task.mp4",
+  "Sunlight Play Task Game": "sunlight_play_task.mp4",   DONE
   "video_prompt": "Cartoon kids play tag and ball in a sunny park, eyes glowing as they move around in natural daylight — the sun winks happily as they laugh and play outdoors."
 },
 {
-  "Smooth Tracking Exercise": "smooth_tracking_exercise.mp4",
+  "Smooth Tracking Exercise": "smooth_tracking_exercise.mp4", DONE
   "video_prompt": "Animated child tracks a glowing balloon smoothly as it floats left to right, then up and down, with trail sparkles showing smooth eye movement, no jerks."
 },
 {
-  "Eye Muscle 8-Pattern Exercise": "eight_pattern_exercise.mp4",
+  "Eye Muscle 8-Pattern Exercise": "eight_pattern_exercise.mp4", DONE
   "video_prompt": "Animated child traces a glowing number 8 in the air with their eyes, following it smoothly as it loops — sparkles show muscle movement paths."
 },
 {
-  "Saccadic Movement Training Exercise": "saccade_training_game.mp4",
+  "Saccadic Movement Training Exercise": "saccade_training_game.mp4", DONE
   "video_prompt": "Cartoon shows how to tape two colorful animal pictures or emojis on opposite walls — child stands in the middle and shifts gaze quickly left and right when they hear a sound or clap — builds saccadic eye movement through real-space cues."
 },
 {
@@ -52,27 +52,27 @@
   "video_prompt": "A lively child switches focus between a spinning top close by and a flying kite far away, highlighted with focus lines and cheerful background sounds."
 },
 {
-  "Myopia Control Walk Game": "myopia_control_walk.mp4",
+  "Myopia Control Walk Game": "myopia_control_walk.mp4", DONE
   "video_prompt": "A happy animated child takes a stroll outdoors, looking around at trees, flowers, and sky to encourage natural myopia control, with bright sunny environment and playful tunes."
 },
 {
-  "Clockwise Eye Roll Exercise": "clockwise_eye_roll.mp4",
+  "Clockwise Eye Roll Exercise": "clockwise_eye_roll.mp4", DONE
   "video_prompt": "A cheerful animated child rolls their eyes in a slow, circular clockwise motion, with guiding arrows and sparkles to make it fun and clear."
 },
 {
-  "Anti-Clockwise Eye Roll Exercise": "anticlockwise_eye_roll.mp4",
+  "Anti-Clockwise Eye Roll Exercise": "anticlockwise_eye_roll.mp4", DONE
   "video_prompt": "An animated child rolls their eyes in an anti-clockwise circle, with colorful directional arrows and light effects to guide the motion."
 },
 {
-  "Zoom Focus Exercise": "zoom_focus_exercise.mp4",
+  "Zoom Focus Exercise": "zoom_focus_exercise.mp4", DONE
   "video_prompt": "A cartoon child holds a toy and slowly brings it closer to their nose, eyes focusing in and out like a zoom lens, with sound effects and a magical sparkle trail."
 },
 {
-  "Pencil Pushup Focus Exercise": "pencil_pushup_exercise.mp4",
+  "Pencil Pushup Focus Exercise": "pencil_pushup_exercise.mp4", DONE
   "video_prompt": "An animated child slowly moves a pencil from arm's length to nose tip, focusing their eyes all the way, with pop-up stars and playful background sounds."
 },
 {
-  "Blinking with Breathing Exercise": "blinking_breathing_relaxation.mp4",
+  "Blinking with Breathing Exercise": "blinking_breathing_relaxation.mp4", DONE
   "video_prompt": "A calm cartoon child takes deep breaths and blinks gently to soothing music, with soft clouds and animated heartbeats showing the rhythm."
 },
 {
@@ -80,7 +80,7 @@
   "video_prompt": "An animated child follows a star that moves diagonally across the screen, tracing its motion with just their eyes, on a vibrant night sky background."
 },
 {
-  "Thumb Near-Far Focus Exercise": "thumb_focus_shift.mp4",
+  "Thumb Near-Far Focus Exercise": "thumb_focus_shift.mp4",  DONE
   "video_prompt": "A cartoon child focuses on their outstretched thumb, then switches gaze to a faraway tree, back and forth with fun ping sounds and smooth animation."
 },
 {

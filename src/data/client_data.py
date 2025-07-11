@@ -1,17 +1,14 @@
-from mysql.connector import connect, Error
-from dotenv import load_dotenv, dotenv_values
 import os
+from dotenv import load_dotenv
+from mysql.connector import connect, Error
 
-load_dotenv()
+# 👇 Absolute load to make sure .env is read no matter what
+env_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.env"))
+load_dotenv(env_path)
 
-env_values = dotenv_values(".env")
-for k, v in env_values.items():
-    os.environ[k] = v
 def get_db():
-    connection = None
     try:
-        print("[DB DEBUG] HOST:", os.getenv("DB_HOST"))
-        print("[DB DEBUG] PORT:", os.getenv("DB_PORT"))
+        print("[DEBUG] CONNECTING TO:", os.getenv("DB_HOST"), os.getenv("DB_PORT"))  # 🔍 log port
         connection = connect(
             host=os.getenv("DB_HOST"),
             port=int(os.getenv("DB_PORT")),

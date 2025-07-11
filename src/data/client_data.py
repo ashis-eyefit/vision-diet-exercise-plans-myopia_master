@@ -1,29 +1,32 @@
-import mysql.connector
-from mysql.connector import Error
-from dotenv import load_dotenv
+from mysql.connector import connect, Error
+from dotenv import load_dotenv, dotenv_values
 import os
 
 load_dotenv()
 
-# Correct generator-style DB dependency
+env_values = dotenv_values(".env")
+for k, v in env_values.items():
+    os.environ[k] = v
 def get_db():
+    connection = None
     try:
-        connection = mysql.connector.connect(
+        connection = connect(
             host=os.getenv("DB_HOST"),
+            port=int(os.getenv("DB_PORT")),
             user=os.getenv("DB_USER"),
-            port=os.getenv("DB_PORT"),
             password=os.getenv("DB_PASSWORD"),
             database=os.getenv("DB_NAME")
         )
-        if connection.is_connected():
-            yield connection  # yields control to the route function
+        yield connection
     except Error as e:
-        print("Error connecting to MySQL database:", e)
+        print("❌ Database connection error:", e)
         raise e
     finally:
-        # Finalizer must run **after** request is done
-        try:
-            if connection.is_connected():
-                connection.close()
-        except:
-            pass
+        if connection and connection.is_connected():
+            connection.close()
+with open(".env", "r") as f:
+    print("🔎 Raw .env contents:\n", f.read())
+
+import os
+print("[DEBUG] os.getenv('DB_HOST'):", os.getenv("DB_HOST"))
+print("[DEBUG] os.environ['DB_HOST']:", os.environ.get("DB_HOST"))

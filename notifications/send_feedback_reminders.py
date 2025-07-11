@@ -3,15 +3,19 @@ from datetime import datetime
 from contextlib import contextmanager
 import mysql.connector
 from mysql.connector import Error
-from dotenv import load_dotenv
+from dotenv import load_dotenv, dotenv_values
 import os
 
 load_dotenv()
+env_values = dotenv_values(".env")
+for k, v in env_values.items():
+    os.environ[k] = v
 
 @contextmanager
 def get_db_connection():
     conn = mysql.connector.connect(
         host=os.getenv("DB_HOST"),
+        port=int(os.getenv("DB_PORT")),
         user=os.getenv("DB_USER"),
         password=os.getenv("DB_PASSWORD"),
         database=os.getenv("DB_NAME")

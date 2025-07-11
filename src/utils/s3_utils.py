@@ -2,19 +2,19 @@ import boto3
 import os
 from botocore.exceptions import NoCredentialsError, ClientError
 
-AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY")
-AWS_SECRET_KEY = os.getenv("AWS_SECRET_KEY")
-S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
-AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
+AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_IMG")
+AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY_IMG")
+S3_BUCKET_NAME = os.getenv("AWS_S3_BUCKET_NAME_IMG")
+AWS_REGION = os.getenv("AWS_REGION_IMG", "us-east-1")
 
 # Create S3 client
 def get_s3_client():
     return boto3.client(
-        's3',
-        aws_access_key_id=AWS_ACCESS_KEY,
-        aws_secret_access_key=AWS_SECRET_KEY,
-        region_name=AWS_REGION
-    )
+    's3',
+    aws_access_key_id=AWS_ACCESS_KEY,
+    aws_secret_access_key=AWS_SECRET_KEY,
+    region_name=AWS_REGION
+)
 
 # Upload image file to S3
 def upload_image_to_s3(file_path, s3_key):

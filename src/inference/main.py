@@ -583,34 +583,40 @@ def get_clean_myopia_output(user_id: str, db=Depends(get_db)):
 
 
 ################## Image generation part ##############
-from fastapi.staticfiles import StaticFiles
-
-app.mount("/outputs/generated_example_images", StaticFiles(directory="outputs/generated_example_images"), name="outputs")
-
-
 import os
 import json
 import hashlib
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends
+from fastapi.staticfiles import StaticFiles
 from diffusers import StableDiffusionPipeline
 import torch
 from src.utils.s3_utils import upload_image_to_s3, generate_s3_url, file_exists_in_s3
 
+# Mount local image folder (for development mode)
+app.mount("/outputs/generated_example_images", StaticFiles(directory="outputs/generated_example_images"), name="outputs")
+
+# Load diffusion model
 dtype = torch.float16 if torch.cuda.is_available() else torch.float32
-print("Starting model load")
+print("🚀 Starting model load...")
 pipe = StableDiffusionPipeline.from_pretrained(
     "runwayml/stable-diffusion-v1-5", torch_dtype=dtype
 )
 pipe.to("cuda" if torch.cuda.is_available() else "cpu")
-print(" model loaded")
-def hash_prompt(prompt):
-    return hashlib.sha256(prompt.encode('utf-8')).hexdigest()[:16]
+print("✅ Model loaded.")
+
+
+# Utility to hash prompt into filename
+def hash_prompt(prompt: str) -> str:
+    if not isinstance(prompt, str):
+        raise ValueError(f"Expected prompt as string, got {type(prompt)}")
+    return hashlib.sha256(prompt.encode("utf-8")).hexdigest()[:16]
 
 
 @app.get("/generate-meal-images/{user_id}")
 def generate_all_meal_images(user_id: str, db=Depends(get_db)):
     cursor = db.cursor(dictionary=True)
     try:
+        # Get latest session_id
         cursor.execute("""
             SELECT session_id FROM generated_daywise_plans
             WHERE user_id = %s
@@ -618,10 +624,11 @@ def generate_all_meal_images(user_id: str, db=Depends(get_db)):
         """, (user_id,))
         session = cursor.fetchone()
         if not session:
-            return {"status": "error", "message": "No plan found"}
+            return {"status": "error", "message": "No plan found for user"}
 
         session_id = session["session_id"]
 
+        # Get all 14 daywise plans
         cursor.execute("""
             SELECT day_number, meals FROM generated_daywise_plans
             WHERE user_id = %s AND session_id = %s
@@ -636,36 +643,62 @@ def generate_all_meal_images(user_id: str, db=Depends(get_db)):
         for plan in plans:
             day = plan["day_number"]
             meals = plan["meals"]
+
             if isinstance(meals, str):
                 meals = json.loads(meals)
 
             for meal_name in ["breakfast", "lunch", "snack", "dinner"]:
                 meal = meals.get(meal_name)
-                if not meal: continue
+                if not isinstance(meal, dict):
+                    print(f"⚠️ Skipping {meal_name} - Day {day}: Invalid structure")
+                    continue
 
                 prompt = meal.get("image_prompt")
-                if not prompt: continue
+                if not isinstance(prompt, str) or not prompt.strip():
+                    print(f"⚠️ Skipping {meal_name} - Day {day}: Invalid prompt -> {prompt}")
+                    continue
 
+                print(f"Processing image for {meal_name} - Day {day} with prompt: {prompt[:60]}...")
+
+                # Generate filename from prompt
                 file_hash = hash_prompt(prompt)
                 filename = f"{meal_name}_{file_hash}.png"
+
+                # ---------------------
+                # S3 Bucket Version
+                # ---------------------
+                s3_key = f"{user_id}/{session_id}/day{day}/{filename}"
+
+                if not file_exists_in_s3(s3_key):
+                    print(f"Generating image: {s3_key}")
+                    image = pipe(prompt, num_inference_steps=20).images[0]
+
+                    temp_dir = "temp_images"
+                    os.makedirs(temp_dir, exist_ok=True)
+                    temp_path = os.path.join(temp_dir, filename)
+                    image.save(temp_path)
+
+                    upload_image_to_s3(temp_path, s3_key)
+                    os.remove(temp_path)
+
+                image_url = generate_s3_url(s3_key)
+
+                # --------------------------
+                # Local Folder (Optional)
+                # --------------------------
+                """
                 local_dir = f"outputs/generated_example_images/{user_id}/{session_id}/day{day}"
                 os.makedirs(local_dir, exist_ok=True)
                 local_path = os.path.join(local_dir, filename)
 
-                s3_key = f"{user_id}/{session_id}/day{day}/{filename}"
-
                 if not os.path.exists(local_path):
-                    print(f"Generating for {user_id} Day {day} {meal_name}")
+                    print(f" Generating local image: {local_path}")
                     image = pipe(prompt, num_inference_steps=20).images[0]
                     image.save(local_path)
 
-                    # Upload to S3 if needed
-                    # upload_image_to_s3(local_path, s3_key)
-
-                # Append local or s3 URL
                 relative_path = local_path.replace("outputs/", "")
                 image_url = f"/outputs/{relative_path}"
-                # image_url = generate_s3_url(s3_key)
+                """
 
                 all_files.append({
                     "day": day,
@@ -676,12 +709,13 @@ def generate_all_meal_images(user_id: str, db=Depends(get_db)):
 
         return {
             "status": "success",
-            "message": f"Images generated for user {user_id}, session {session_id}",
+            "message": f"Images generated for {user_id}, session {session_id}",
             "images": all_files
         }
 
     except Exception as e:
         return {"status": "error", "message": str(e)}
+
     finally:
         if cursor: cursor.close()
         if db: db.close()

@@ -394,7 +394,7 @@ def get_data_llm_output(user_id:str, cursor)->json:
             "Blinking with Breathing Exercise": "blinking_breathing_relaxation.mp4",
             "Diagonal Eye Tracking Exercise": "diagonal_tracking_exercise.mp4",
             "Thumb Near-Far Focus Exercise": "thumb_focus_shift.mp4",
-            "Eye Stretch Up and Down Exercise": "eye_stretch_up_down.mp4",
+            "Vertical Eye Stretch Exercise": "vertical_eye_stretch.mp4",
             "Spoon Tracking Challenge Exercise": "spoon_tracking_game.mp4",
             "Color Contrast Explorer Exercise": "color_contrast_explorer.mp4",
             "Eye Shoulder Tag Exercise": "shoulder_tap_eyes.mp4",
@@ -415,13 +415,13 @@ def get_data_llm_output(user_id:str, cursor)->json:
             "Bouncing Letter Focus Game Exercise": "letter_focus_bounce.mp4",
             "Star Figure Tracking Exercise": "star_pattern_tracking.mp4",
             "Foot Tap Direction Game": "foot_tap_eye_lead.mp4",
-            "Color Toss Sorting Game": "color_toss_sorting.mp4",
+            "Color Matching and Inserting in The Same Colored Bag": "color_matching_inserting_bag.mp4"
             "Pillow Maze Obstacle Game": "pillow_maze_navigation.mp4",
             "Box Peek & Recall Game": "box_peek_memory.mp4",
             "Soap Bubble Pop Walk Game": "bubble_pop_chase.mp4",
             "Shadow Shape Tracing Game":"shadow_trace_game.mp4",
             "Toy Toss and Spot Game": "toy_toss_spot_game.mp4",
-            "Animal Track and Freeze Game": "animal_track_freeze.mp4"
+            "Peripheral Direction Gaze Freeze Exercise": "peripheral_gaze_freeze.mp4"
         }
 
 

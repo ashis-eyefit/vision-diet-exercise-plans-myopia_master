@@ -10,6 +10,8 @@ for k, v in env_values.items():
 def get_db():
     connection = None
     try:
+        print("[DB DEBUG] HOST:", os.getenv("DB_HOST"))
+        print("[DB DEBUG] PORT:", os.getenv("DB_PORT"))
         connection = connect(
             host=os.getenv("DB_HOST"),
             port=int(os.getenv("DB_PORT")),
@@ -24,9 +26,3 @@ def get_db():
     finally:
         if connection and connection.is_connected():
             connection.close()
-with open(".env", "r") as f:
-    print("🔎 Raw .env contents:\n", f.read())
-
-import os
-print("[DEBUG] os.getenv('DB_HOST'):", os.getenv("DB_HOST"))
-print("[DEBUG] os.environ['DB_HOST']:", os.environ.get("DB_HOST"))
